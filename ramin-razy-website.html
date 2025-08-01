@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramin Razy - Transform Your Life Through Functional Fitness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Enhanced Color System with Better Contrast */
+            --primary: #0D7377;
+            --primary-light: #14FFEC;
+            --primary-dark: #0A5D61;
+            --secondary: #212121;
+            --accent: #FFD93D;
+            --accent-hover: #FFC107;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --text-light: #6C757D;
+            --bg-light: #FAFBFC;
+            --bg-white: #FFFFFF;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
+            --shadow-xl: 0 12px 48px rgba(0,0,0,0.24);
+            --gradient-primary: linear-gradient(135deg, #0D7377 0%, #14FFEC 100%);
+            --gradient-dark: linear-gradient(135deg, #0A5D61 0%, #0D7377 100%);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Typography Scale */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+        /* Improved Hero Section */
+        .hero {
+            background: var(--gradient-primary);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50px, -50px); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-video {
+            width: 100%;
+            max-width: 700px;
+            margin: 2.5rem auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            position: relative;
+        }
+
+        .hero-video::after {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .hero-video:hover::after {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: white;
+        }
+
+        .hero-video img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Enhanced CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text-primary);
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(255, 217, 61, 0.4);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 217, 61, 0.6);
+            background: var(--accent-hover);
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Urgency Indicator */
+        .urgency-text {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        /* Improved Features Section */
+        .why-functional {
+            padding: 100px 20px;
+            background: var(--bg-light);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .section-header h2 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotateY(180deg);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Trust Indicators */
+        .trust-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* Holistic Approach with Better Visual Hierarchy */
+        .holistic {
+            padding: 100px 20px;
+            background: var(--bg-white);
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .approach-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .approach-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            opacity: 0;
+            border-radius: var(--border-radius);
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .approach-item:hover::before {
+            opacity: 0.05;
+        }
+
+        .approach-item h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .approach-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Enhanced Testimonials */
+        .success-stories {
+            padding: 100px 20px;
+            background: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--bg-white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            position: relative;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 80px;
+            color: var(--primary);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial p {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .testimonial-author::before {
+            content: '—';
+            color: var(--primary);
+        }
+
+        /* Transform Section with Better CTAs */
+        .ready-transform {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .ready-transform h2 {
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .ready-transform > p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .transform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .transform-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
+        }
+
+        .transform-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .transform-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .transform-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .transform-card p {
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .transform-card strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Meet Ramin Section Enhancement */
+        .meet-ramin {
+            padding: 100px 20px;
+            background: var(--bg-white);
+        }
+
+        .ramin-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .ramin-image {
+            position: relative;
+        }
+
+        .ramin-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .ramin-image::after {
+            content: '15+ Years of Excellence';
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .ramin-bio h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .ramin-bio p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .ramin-bio p:first-of-type {
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Banner Section Enhancement */
+        .banner-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v100H0z" fill="none"/><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
+            background-size: 100px 100px;
+        }
+
+        .banner-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .banner-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .featured-in {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Final CTA Enhancement */
+        .final-cta {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .final-cta h2 {
+            margin-bottom: 2rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta .cta-button {
+            font-size: 1.2rem;
+            padding: 20px 50px;
+            animation: none;
+        }
+
+        /* Social Proof Bar */
+        .social-proof {
+            background: var(--secondary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .social-proof span {
+            display: inline-block;
+            margin: 0 20px;
+            opacity: 0.9;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .ramin-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .ramin-image::after {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .transform-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid,
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-proof span {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus States for Accessibility */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Print Styles */
+        @media print {
+            .hero-video,
+            .cta-button,
+            .social-proof {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Social Proof Bar -->
+    <div class="social-proof">
+        <span>⭐ 500+ Clients Transformed</span>
+        <span>📍 Bangkok's Top-Rated Trainer</span>
+        <span>🏆 15+ Years Experience</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Life<br>Through<br>Functional Fitness</h1>
+            <p class="hero-subtitle">Expert personal training for busy professionals looking to get stronger, move better, and build lasting healthy habits that fit your Bangkok lifestyle</p>
+            <div class="hero-video">
+                <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=800" alt="Training Video">
+            </div>
+            <a href="#contact" class="cta-button">Book Your Free Consultation</a>
+            <div class="urgency-text">🔥 Limited spots available for January 2024</div>
+        </div>
+    </section>
+
+    <!-- Why Functional Strength Training Matters -->
+    <section class="why-functional">
+        <div class="section-header">
+            <h2>Why Functional Strength Training Matters</h2>
+            <p>Functional training doesn't just make you look good - it prepares your body for real-life activities</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💪</div>
+                <h3>Stronger Bones</h3>
+                <p>Combat osteoporosis and bone density loss with targeted resistance training exercises that strengthen your skeletal system</p>
+                <span class="trust-badge">Science-Backed</span>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Improved Metabolism</h3>
+                <p>Boost your resting metabolic rate through muscle building - burn more calories even when you're not exercising</p>
+                <span class="trust-badge">24/7 Fat Burning</span>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Better Daily Movement</h3>
+                <p>Train movements, not just muscles. Improve how you lift, carry, push, pull, and rotate in everyday life</p>
+                <span class="trust-badge">Real-World Results</span>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Injury Prevention</h3>
+                <p>Correct muscle imbalances and movement patterns to reduce injury risk and eliminate chronic pain</p>
+                <span class="trust-badge">Long-Term Health</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Holistic Approach Section -->
+    <section class="holistic">
+        <div class="section-header">
+            <h2>Holistic Approach to Health & Fitness</h2>
+            <p>True transformation goes beyond the gym. My integrated approach addresses every aspect of your wellness journey</p>
+        </div>
+        <div class="approach-grid">
+            <div class="approach-item">
+                <h4>Yoga & Pilates</h4>
+                <p>Improve flexibility, balance, and core strength with targeted movement practices that complement your strength training</p>
+            </div>
+            <div class="approach-item">
+                <h4>Nutrition Coaching</h4>
+                <p>Sustainable, practical nutrition strategies that fit your lifestyle - no extreme diets or unrealistic meal plans</p>
+            </div>
+            <div class="approach-item">
+                <h4>Lifestyle Consulting</h4>
+                <p>Comprehensive approach to stress management, sleep optimization, and building sustainable healthy habits</p>
+            </div>
+            <div class="approach-item">
+                <h4>Weight Management</h4>
+                <p>Science-based strategies for sustainable weight loss or muscle gain - no quick fixes, just lasting results</p>
+            </div>
+            <div class="approach-item">
+                <h4>Functional Aging Specialist</h4>
+                <p>Specialized programs for 40+ clients focusing on maintaining strength, mobility, and independence as you age</p>
+            </div>
+            <div class="approach-item">
+                <h4>Online Training Available</h4>
+                <p>Can't make it to the gym? Get personalized online coaching with video analysis and regular check-ins</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="success-stories">
+        <div class="section-header">
+            <h2>Client Success Stories</h2>
+            <p>Real transformations from real people</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Training with Ramin has been a game-changer. Not only did I lose 20kg, but I feel stronger and more confident than I have in years. His holistic approach to fitness and nutrition made all the difference."</p>
+                <div class="testimonial-author">Sarah Johnson - Lost 20kg in 6 months</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"I tried multiple gyms and trainers but nothing worked until I met Ramin. In just 3 months, I've completely transformed my body and mindset. His expertise in functional movement has eliminated my chronic back pain."</p>
+                <div class="testimonial-author">Michael Chen - Eliminated chronic pain</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"As someone in their 50s, I was worried about starting a fitness program. Ramin's specialized approach for aging clients helped me regain strength and mobility I thought I'd lost forever. I feel 10 years younger!"</p>
+                <div class="testimonial-author">Robert Thompson - Age 52, regained vitality</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Transform Section -->
+    <section class="ready-transform">
+        <h2>Ready to Transform Your Life?</h2>
+        <p>Start your journey to better health, strength, and confidence today</p>
+        
+        <div class="transform-grid">
+            <div class="transform-card">
+                <h3>Call or Inquire</h3>
+                <p>Schedule a free 30-minute consultation to discuss your goals and see if we're a good fit</p>
+                <p><strong>Phone:</strong> +66 80 188 4114<br>
+                <strong>Email:</strong> ramin@powerofone.com</p>
+            </div>
+            <div class="transform-card">
+                <h3>Training Locations</h3>
+                <p><strong>Main Studio:</strong><br>
+                Aspire @ Sathorn Thani Building<br>
+                92/5 North Sathorn Road<br>
+                Silom, Bangkok 10500</p>
+                <p><strong>Also available at:</strong><br>
+                - Virgin Active (Sindhorn)<br>
+                - Fitness First (EmQuartier)</p>
+            </div>
+        </div>
+        
+        <h3 style="margin-top: 80px; font-size: 2rem;">Why Choose Ramin?</h3>
+        
+        <div class="transform-grid" style="margin-top: 40px;">
+            <div class="transform-card">
+                <h4>15+ Years Experience</h4>
+                <p>Extensive knowledge and proven track record with diverse clients</p>
+            </div>
+            <div class="transform-card">
+                <h4>500+ Clients Transformed</h4>
+                <p>Consistent results across all ages and fitness levels</p>
+            </div>
+            <div class="transform-card">
+                <h4>24/7 Support</h4>
+                <p>Ongoing guidance beyond just training sessions</p>
+            </div>
+            <div class="transform-card">
+                <h4>Personalized Programs</h4>
+                <p>Every program is customized to your unique needs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Ramin Section -->
+    <section class="meet-ramin">
+        <div class="section-header">
+            <h2>Meet Ramin Razy</h2>
+            <p>15+ years transforming lives through expert fitness coaching in Bangkok</p>
+        </div>
+        <div class="ramin-content">
+            <div class="ramin-image">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600" alt="Ramin Razy">
+            </div>
+            <div class="ramin-bio">
+                <h3>Hi, I'm Ramin Razy</h3>
+                <p>I've been helping busy professionals transform their bodies and lives for over 15 years. What started as a personal journey to overcome my own health challenges has evolved into a passion for helping others achieve their fitness goals.</p>
+                <p>My approach is simple but effective: I combine science-based training methods with practical lifestyle strategies that actually work for busy people. No extreme diets, no unrealistic workout schedules - just sustainable habits that deliver real results.</p>
+                <p>Whether you're looking to lose weight, build strength, improve mobility, or simply feel better in your daily life, I'm here to guide you every step of the way.</p>
+                <p>Let's work together to unlock your full potential and create lasting change that goes beyond just looking good - it's about feeling strong, confident, and capable in everything you do.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <div class="banner-content">
+            <h3>Bangkok's Most Trusted<br>Personal Fitness Expert</h3>
+            <p>Located in the heart of Bangkok, I provide in-person training at premium facilities across the city as well as online coaching for busy professionals worldwide</p>
+            <p class="featured-in">Featured in: Bangkok Post | BK Magazine | The Nation | Expat Living | Time Out Bangkok</p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Ready to Start Your<br>Transformation Journey?</h2>
+        <p>Don't wait another day to invest in your health and fitness</p>
+        <a href="#" class="cta-button">Book Your Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Ramin Razy</strong></p>
+        <p>Personal Trainer | Functional Aging Specialist | Wellness Coach | Bangkok, Thailand</p>
+        <p style="margin-top: 20px; font-size: 0.9rem;">© 2024 Ramin Razy - Power of One Training. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+            
