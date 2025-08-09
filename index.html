@@ -24,6 +24,15 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://personaltrainingbangkokp1.com/">
     
+    <!-- Performance Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://img.youtube.com">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    
     <!-- Open Graph Tags (no change needed, they are already great) -->
     <meta property="og:title" content="Personal Trainer Bangkok - Ramin Razy | Expert Fitness Coach">
     <meta property="og:description" content="Top-rated personal trainer in Bangkok with 17+ years experience. Transform your fitness with functional training in Silom & Sathorn.">
@@ -31,7 +40,11 @@
     <meta property="og:url" content="https://personaltrainingbangkokp1.com/">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="th_TH">
-    <meta property="og:image" content="images/Ramin-Razy-personal-trainer-bangkok.jpg">
+    <meta property="og:image" content="images/ramin-razy-personal-trainer-bangkok-og-1200x630.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ramin Razy - Professional Personal Trainer in Bangkok, Thailand">
+    <meta property="og:image:type" content="image/jpeg">
 
     
     <!-- 
@@ -43,7 +56,7 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Power of One - Personal Training Bangkok",
-        "image": "images/Ramin-Razy-personal-trainer-bangkok.jpg",
+        "image": "images/ramin-razy-personal-trainer-bangkok-og-1200x630.jpg",
         "description": "Expert personal trainer in Bangkok specializing in functional fitness, weight loss, and strength training for busy professionals.",
         "address": {
             "@type": "PostalAddress",
@@ -206,44 +219,60 @@
     }
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXLXPS93SK"></script>
+    <!-- Deferred Google Analytics for performance -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-WXLXPS93SK');
+      // Load Google Analytics after page load
+      window.addEventListener('load', function() {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-WXLXPS93SK';
+        document.head.appendChild(script);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WXLXPS93SK');
+        
+        // Make gtag available globally
+        window.gtag = gtag;
+      });
       
       // Track phone number clicks
       function trackPhoneClick() {
-        gtag('event', 'phone_click', {
-          event_category: 'contact',
-          event_label: 'phone_number_click'
-        });
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'phone_click', {
+            event_category: 'contact',
+            event_label: 'phone_number_click'
+          });
+        }
       }
       
       // Track form submissions
       function trackFormSubmission() {
-        gtag('event', 'form_submission', {
-          event_category: 'contact',
-          event_label: 'consultation_booking'
-        });
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submission', {
+            event_category: 'contact',
+            event_label: 'consultation_booking'
+          });
+        }
       }
     </script>
 
-    <!-- Facebook Pixel -->
+    <!-- Deferred Facebook Pixel for performance -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'FB_PIXEL_ID');
-      fbq('track', 'PageView');
+      // Load Facebook Pixel after page load
+      window.addEventListener('load', function() {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'FB_PIXEL_ID');
+        fbq('track', 'PageView');
+      });
     </script>
     <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=FB_PIXEL_ID&ev=PageView&noscript=1"
@@ -279,6 +308,8 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             font-size: 16px;
@@ -872,6 +903,56 @@
             height: 100%;
             border: 0;
         }
+
+        /* YouTube Facade Styles */
+        .youtube-facade {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .youtube-facade:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        .youtube-thumbnail {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background: rgba(255, 0, 0, 0.9);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-button::after {
+            content: '';
+            border-left: 18px solid white;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 4px;
+        }
+
+        .youtube-facade.loaded iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
         
         .video-card h4 {
             color: var(--text-primary);
@@ -1381,7 +1462,11 @@
     <header class="site-header">
         <div class="header-content">
             <div class="logo-container">
-                <img src="images/pof-logo-main.png" alt="Power of One - Personal Training Bangkok" class="site-logo">
+                <picture>
+                    <source media="(max-width: 640px)" srcset="images/personal-trainer-bangkok-logo-40w.png 1x, images/personal-trainer-bangkok-logo-120w.png 3x">
+                    <source media="(min-width: 641px)" srcset="images/personal-trainer-bangkok-logo-60w.png 1x, images/personal-trainer-bangkok-logo-120w.png 2x">
+                    <img src="images/personal-trainer-bangkok-logo-40w.png" alt="Power of One Personal Training Bangkok - Expert Fitness Coach Ramin Razy" class="site-logo" width="50" height="50" loading="eager">
+                </picture>
                 <span class="business-name">Power of One - Personal Training Bangkok</span>
             </div>
             <div class="header-contact">
@@ -1431,8 +1516,17 @@
                 </div>
             </div>
             <div class="hero-video">
-                <!-- Embedded YouTube video for a dynamic hero section -->
-                <iframe loading="lazy" src="https://www.youtube.com/embed/Wcm-7JOvTu0?si=2cpSJfuNYsS_CGuu" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- YouTube Facade for performance optimization -->
+                <div class="youtube-facade" data-video-id="Wcm-7JOvTu0" data-params="si=2cpSJfuNYsS_CGuu" style="position: relative; padding-bottom: 56.25%; height: 0;">
+                    <img src="https://img.youtube.com/vi/Wcm-7JOvTu0/maxresdefault.jpg" 
+                         alt="Ramin Razy Personal Training Introduction Video - Bangkok Fitness Coach" 
+                         class="youtube-thumbnail" 
+                         loading="lazy"
+                         width="480" 
+                         height="360"
+                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                    <div class="play-button" aria-label="Play Ramin's introduction video"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -1444,7 +1538,11 @@
     <section class="meet-ramin">
         <div class="ramin-content">
             <div class="ramin-image">
-                <img src="images/Ramin-Razy-personal-trainer-bangkok.jpg" alt="Ramin Razy personal trainer">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/ramin-razy-personal-trainer-bangkok-372w.jpg 1x" sizes="(max-width: 768px) 372px">
+                    <source media="(min-width: 769px)" srcset="images/ramin-razy-personal-trainer-bangkok-500w.jpg 1x" sizes="(min-width: 769px) 500px">
+                    <img src="images/ramin-razy-personal-trainer-bangkok-372w.jpg" alt="Ramin Razy - Certified Personal Trainer in Bangkok, Thailand specializing in functional fitness, weight loss and strength training" class="ramin-profile-photo" width="500" height="667" loading="lazy">
+                </picture>
             </div>
             <div class="ramin-bio">
                 <h3>Meet Your Coach, Ramin Razy</h3>
@@ -1527,24 +1625,48 @@
         <div class="expert-insights-grid">
             <div class="video-card">
                 <div class="video-wrapper">
-                    <!-- Embedded YouTube video for Bodyweight Training -->
-                    <iframe loading="lazy" src="https://www.youtube.com/embed/LLaMBiJm-KU?si=Cjn9g4KcMfBua-Op" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- YouTube Facade for Bodyweight Training -->
+                    <div class="youtube-facade" data-video-id="LLaMBiJm-KU" data-params="si=Cjn9g4KcMfBua-Op">
+                        <img src="https://img.youtube.com/vi/LLaMBiJm-KU/maxresdefault.jpg" 
+                             alt="Bodyweight Training for Beginners - No Gym Required by Ramin Razy" 
+                             class="youtube-thumbnail" 
+                             loading="lazy"
+                             width="480" 
+                             height="360">
+                        <div class="play-button" aria-label="Play bodyweight training video"></div>
+                    </div>
                 </div>
                 <h4>Bodyweight Training for Beginners</h4>
                 <p>No gym? No problem. This video breaks down how to build serious strength using just your own body. Perfect for beginners or those who travel often.</p>
             </div>
             <div class="video-card">
                 <div class="video-wrapper">
-                    <!-- Embedded YouTube video for Kettlebell Training -->
-                    <iframe loading="lazy" src="https://www.youtube.com/embed/Wcm-7JOvTu0?si=wKjxvK1B37tlHJgo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- YouTube Facade for Kettlebell Training -->
+                    <div class="youtube-facade" data-video-id="Wcm-7JOvTu0" data-params="si=wKjxvK1B37tlHJgo">
+                        <img src="https://img.youtube.com/vi/Wcm-7JOvTu0/maxresdefault.jpg" 
+                             alt="First Kettlebell Workout - Essential Training for Beginners by Ramin Razy" 
+                             class="youtube-thumbnail" 
+                             loading="lazy"
+                             width="480" 
+                             height="360">
+                        <div class="play-button" aria-label="Play kettlebell workout video"></div>
+                    </div>
                 </div>
                 <h4>Your First Kettlebell Workout</h4>
                 <p>Kettlebells are one of the most effective tools for fat loss and muscle building. I'll show you the essentials to get you started safely and effectively.</p>
             </div>
             <div class="video-card">
                 <div class="video-wrapper">
-                    <!-- Embedded YouTube video for Keto Diet -->
-                    <iframe loading="lazy" src="https://www.youtube.com/embed/a9Vy8hl_CNo?si=Cjn9g4KcMfBua-Op" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <!-- YouTube Facade for Keto Diet -->
+                    <div class="youtube-facade" data-video-id="a9Vy8hl_CNo" data-params="si=Cjn9g4KcMfBua-Op">
+                        <img src="https://img.youtube.com/vi/a9Vy8hl_CNo/maxresdefault.jpg" 
+                             alt="Why You're Not Losing Weight on Keto Diet - Expert Advice by Ramin Razy" 
+                             class="youtube-thumbnail" 
+                             loading="lazy"
+                             width="480" 
+                             height="360">
+                        <div class="play-button" aria-label="Play keto diet advice video"></div>
+                    </div>
                 </div>
                 <h4>Why You're Not Losing Weight on Keto</h4>
                 <p>The keto diet can be effective, but it's not a magic bullet. I'll explain why it's not working for you and what a better, more sustainable approach looks like.</p>
@@ -1561,7 +1683,17 @@
         <div class="testimonials-grid">
             <div class="testimonial video-testimonial">
                 <div class="video-container">
-                    <iframe width="100%" height="250" src="https://www.youtube.com/embed/D8L76ICTu_U?si=dH2R2lwiflbZQpG4" title="Client Success Story - Video Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <!-- YouTube Facade for Client Testimonial -->
+                    <div class="youtube-facade" data-video-id="D8L76ICTu_U" data-params="si=dH2R2lwiflbZQpG4" style="height: 250px;">
+                        <img src="https://img.youtube.com/vi/D8L76ICTu_U/maxresdefault.jpg" 
+                             alt="Client Success Story - Real Results with Personal Trainer Ramin Razy Bangkok" 
+                             class="youtube-thumbnail" 
+                             loading="lazy"
+                             width="480" 
+                             height="360"
+                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <div class="play-button" aria-label="Play client success story video"></div>
+                    </div>
                 </div>
                 <div class="stars">★★★★★</div>
                 <p>"Watch my transformation story and hear about my experience training with Ramin."</p>
@@ -1745,7 +1877,10 @@
     <!-- Footer -->
     <footer>
         <div class="footer-logo">
-            <img src="images/pof-logo-main.png" alt="Power of One" class="footer-logo-img">
+            <picture>
+                <source srcset="images/personal-trainer-bangkok-logo-60w.png 1x, images/personal-trainer-bangkok-logo-120w.png 2x">
+                <img src="images/personal-trainer-bangkok-logo-60w.png" alt="Power of One Personal Training Bangkok - Ramin Razy Fitness Coach" class="footer-logo-img" width="60" height="60" loading="lazy">
+            </picture>
         </div>
         <p><strong>Power of One - Personal Training Bangkok</strong></p>
         <p>Functional Fitness | Weight Loss | Strength Training | Nutrition Coaching</p>
@@ -1817,6 +1952,32 @@
                     fbq('track', 'Schedule');
                 }
             });
+        });
+
+        // YouTube Facade functionality
+        function loadYouTubeVideo(facade) {
+            const videoId = facade.dataset.videoId;
+            const params = facade.dataset.params || '';
+            const iframe = document.createElement('iframe');
+            
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&${params}`);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.position = 'absolute';
+            iframe.style.top = '0';
+            iframe.style.left = '0';
+            
+            facade.innerHTML = '';
+            facade.appendChild(iframe);
+            facade.classList.add('loaded');
+        }
+
+        // Initialize YouTube facades
+        document.querySelectorAll('.youtube-facade').forEach(facade => {
+            facade.addEventListener('click', () => loadYouTubeVideo(facade));
         });
     </script>
 </body>
