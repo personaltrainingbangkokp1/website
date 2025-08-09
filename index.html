@@ -284,34 +284,10 @@
     /></noscript>
 
     <style>
-        /* General Styles (unchanged, they are well-defined) */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Minified critical styles */
+        *{margin:0;padding:0;box-sizing:border-box}
 
-        :root {
-            --primary: #0D7377;
-            --primary-light: #14FFEC;
-            --primary-dark: #0A5D61;
-            --secondary: #212121;
-            --accent: #FFD93D;
-            --accent-hover: #FFC107;
-            --text-primary: #1A1A1A;
-            --text-secondary: #4A4A4A;
-            --text-light: #6C757D;
-            --bg-light: #FAFBFC;
-            --bg-white: #FFFFFF;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
-            --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
-            --shadow-xl: 0 12px 48px rgba(0,0,0,0.24);
-            --gradient-primary: linear-gradient(135deg, #0D7377 0%, #14FFEC 100%);
-            --gradient-dark: linear-gradient(135deg, #0A5D61 0%, #0D7377 100%);
-            --border-radius: 12px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+        :root{--primary:#0D7377;--primary-light:#14FFEC;--primary-dark:#0A5D61;--secondary:#212121;--accent:#FFD93D;--accent-hover:#FFC107;--text-primary:#1A1A1A;--text-secondary:#4A4A4A;--text-light:#6C757D;--bg-light:#FAFBFC;--bg-white:#FFFFFF;--shadow-sm:0 2px 4px rgba(0,0,0,0.08);--shadow-md:0 4px 12px rgba(0,0,0,0.12);--shadow-lg:0 8px 24px rgba(0,0,0,0.16);--shadow-xl:0 12px 48px rgba(0,0,0,0.24);--gradient-primary:linear-gradient(135deg,#0D7377 0%,#14FFEC 100%);--gradient-dark:linear-gradient(135deg,#0A5D61 0%,#0D7377 100%);--border-radius:12px;--transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
 
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         
@@ -731,7 +707,7 @@
             transform: rotateY(180deg);
         }
 
-        .service-item h4 {
+        .service-item h3 {
             color: var(--text-primary);
             font-size: 1.4rem;
             margin-bottom: 15px;
@@ -928,28 +904,8 @@
             transition: opacity 0.3s ease;
         }
 
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 68px;
-            height: 48px;
-            background: rgba(255, 0, 0, 0.9);
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        .play-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(255,0,0,0.9);border:none;border-radius:6px;transition:all 0.3s ease;display:flex;align-items:center;justify-content:center;cursor:pointer;color:white;font-size:20px}
 
-        .play-button::after {
-            content: '';
-            border-left: 18px solid white;
-            border-top: 12px solid transparent;
-            border-bottom: 12px solid transparent;
-            margin-left: 4px;
-        }
 
         .youtube-facade.loaded iframe {
             position: absolute;
@@ -959,7 +915,7 @@
             height: 100%;
         }
         
-        .video-card h4 {
+        .video-card h3 {
             color: var(--text-primary);
             font-size: 1.3rem;
             margin-bottom: 10px;
@@ -1530,7 +1486,9 @@
                          width="480" 
                          height="360"
                          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                    <div class="play-button" aria-label="Play Ramin's introduction video"></div>
+                    <button class="play-button" type="button" aria-label="Play Ramin's introduction video">
+                        <span aria-hidden="true">▶</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1546,7 +1504,7 @@
                 <picture>
                     <source media="(max-width: 768px)" srcset="images/ramin-razy-personal-trainer-bangkok-372w.jpg 1x" sizes="(max-width: 768px) 372px">
                     <source media="(min-width: 769px)" srcset="images/ramin-razy-personal-trainer-bangkok-500w.jpg 1x" sizes="(min-width: 769px) 500px">
-                    <img src="images/ramin-razy-personal-trainer-bangkok-372w.jpg" alt="Ramin Razy - Certified Personal Trainer in Bangkok, Thailand specializing in functional fitness, weight loss and strength training" class="ramin-profile-photo" width="500" height="667" loading="lazy">
+                    <img src="images/ramin-razy-personal-trainer-bangkok-372w.jpg" alt="Ramin Razy - Certified Personal Trainer in Bangkok, Thailand specializing in functional fitness, weight loss and strength training" class="ramin-profile-photo" width="372" height="496" loading="lazy">
                 </picture>
             </div>
             <div class="ramin-bio">
@@ -1569,21 +1527,21 @@
                 <div class="service-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dumbbell"><path d="m6.5 10.5-4-4a2.828 2.828 0 1 1 4-4l4 4"/><path d="M13.43 14.57 2.5 3.64a2.828 2.828 0 1 1 4-4l10.93 10.93"/><path d="m14.5 6.5 4-4a2.828 2.828 0 1 1 4 4l-4 4"/><path d="m5.64 17.36 10.93 10.93a2.828 2.828 0 1 0 4-4L9.64 13.36"/><path d="m18.5 12.5-4 4a2.828 2.828 0 1 0 4 4l4-4"/><path d="m13.36 9.64 10.93 10.93a2.828 2.828 0 1 0 4-4L17.36 5.64"/><path d="m11.5 18.5-4 4a2.828 2.828 0 1 1 4 4l4-4"/><path d="m5.64 17.36-4 4a2.828 2.828 0 1 0 4 4l4-4"/></svg>
                 </div>
-                <h4>Weight Loss Coaching in Bangkok</h4>
+                <h3>Weight Loss Coaching in Bangkok</h3>
                 <p>Personalized programs focused on sustainable fat loss through a combination of tailored workouts and expert nutrition guidance.</p>
             </div>
             <div class="service-item">
                 <div class="service-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08L12 14"/></svg>
                 </div>
-                <h4>Functional Fitness Training</h4>
+                <h3>Functional Fitness Training</h3>
                 <p>Improve your mobility, strength, and everyday performance with a training philosophy designed to make your body work better as a whole.</p>
             </div>
             <div class="service-item">
                 <div class="service-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chef-hat"><path d="M17 21a1 1 0 0 1-1-1v-5.26a1 1 0 0 0-.48-.87l-2.43-1.29a1 1 0 0 1-.48-.87V5a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v4.71a1 1 0 0 1-.48.87L3.45 14.7a1 1 0 0 0-.48.87V20a1 1 0 0 1-1 1"/><path d="M2 17h20"/><path d="M22 21a1 1 0 0 1-1-1v-5.26a1 1 0 0 0-.48-.87L18.09 13a1 1 0 0 1-.48-.87V5a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/><path d="M22 17h-5.26a1 1 0 0 0-.87.48L13.7 20"/><path d="M5.26 17H2a1 1 0 0 0-1 1v2"/><path d="M2 20h20"/><path d="M12 4v4"/></svg>
                 </div>
-                <h4>Nutrition Coaching</h4>
+                <h3>Nutrition Coaching</h3>
                 <p>Achieve your body composition goals with personalized, easy-to-follow nutrition plans that complement your training and lifestyle in Bangkok.</p>
             </div>
         </div>
@@ -1638,10 +1596,12 @@
                              loading="lazy"
                              width="480" 
                              height="360">
-                        <div class="play-button" aria-label="Play bodyweight training video"></div>
+                        <button class="play-button" type="button" aria-label="Play bodyweight training video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
                     </div>
                 </div>
-                <h4>Bodyweight Training for Beginners</h4>
+                <h3>Bodyweight Training for Beginners</h3>
                 <p>No gym? No problem. This video breaks down how to build serious strength using just your own body. Perfect for beginners or those who travel often.</p>
             </div>
             <div class="video-card">
@@ -1654,10 +1614,12 @@
                              loading="lazy"
                              width="480" 
                              height="360">
-                        <div class="play-button" aria-label="Play kettlebell workout video"></div>
+                        <button class="play-button" type="button" aria-label="Play kettlebell workout video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
                     </div>
                 </div>
-                <h4>Your First Kettlebell Workout</h4>
+                <h3>Your First Kettlebell Workout</h3>
                 <p>Kettlebells are one of the most effective tools for fat loss and muscle building. I'll show you the essentials to get you started safely and effectively.</p>
             </div>
             <div class="video-card">
@@ -1670,10 +1632,12 @@
                              loading="lazy"
                              width="480" 
                              height="360">
-                        <div class="play-button" aria-label="Play keto diet advice video"></div>
+                        <button class="play-button" type="button" aria-label="Play keto diet advice video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
                     </div>
                 </div>
-                <h4>Why You're Not Losing Weight on Keto</h4>
+                <h3>Why You're Not Losing Weight on Keto</h3>
                 <p>The keto diet can be effective, but it's not a magic bullet. I'll explain why it's not working for you and what a better, more sustainable approach looks like.</p>
             </div>
         </div>
@@ -1697,7 +1661,9 @@
                              width="480" 
                              height="360"
                              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                        <div class="play-button" aria-label="Play client success story video"></div>
+                        <button class="play-button" type="button" aria-label="Play client success story video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
                     </div>
                 </div>
                 <div class="stars">★★★★★</div>
