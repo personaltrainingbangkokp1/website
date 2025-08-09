@@ -312,12 +312,14 @@
         h4 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 
         .trust-banner {
-            background: var(--primary);
+            background: var(--gradient-primary);
             color: white;
             text-align: center;
-            padding: 12px 20px;
-            font-size: 0.95rem;
-            font-weight: 600;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 99;
         }
 
         .trust-banner span {
@@ -332,6 +334,17 @@
             position: sticky;
             top: 0;
             z-index: 100;
+        }
+
+        /* Header sticks after trust banner */
+        /* Hide logo container when header is sticky */
+        .site-header.sticky .logo-container {
+            display: none;
+        }
+
+        /* Center contact info when logo is hidden */
+        .site-header.sticky .header-content {
+            justify-content: center;
         }
 
         .header-content {
@@ -372,6 +385,22 @@
         .header-phone:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
+        }
+
+        /* Mobile phone number optimization */
+        @media (max-width: 768px) {
+            .header-phone {
+                font-size: 0.85rem;
+                padding: 8px 12px;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-phone {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
         }
 
         .social-icons {
@@ -1948,6 +1977,22 @@
 
         // Initialize YouTube facades
         document.addEventListener('DOMContentLoaded', function() {
+            // Sticky header functionality
+            const header = document.querySelector('.site-header');
+            const trustBanner = document.querySelector('.trust-banner');
+            
+            function handleStickyHeader() {
+                const trustBannerRect = trustBanner.getBoundingClientRect();
+                if (trustBannerRect.bottom <= 0) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
+            }
+            
+            window.addEventListener('scroll', handleStickyHeader);
+            handleStickyHeader(); // Check initial state
+
             const facades = document.querySelectorAll('.youtube-facade');
             console.log('YouTube facades found:', facades.length);
             
