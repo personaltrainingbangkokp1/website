@@ -60,10 +60,10 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
-# Redirect www to non-www
+# Redirect non-www to www (Netlify best practice)
 [[redirects]]
-  from = "https://www.personaltrainingbangkokp1.com/*"
-  to = "https://personaltrainingbangkokp1.com/:splat"
+  from = "https://personaltrainingbangkokp1.com/*"
+  to = "https://www.personaltrainingbangkokp1.com/:splat"
   status = 301
   force = true
 

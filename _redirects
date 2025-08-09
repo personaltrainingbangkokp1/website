@@ -1,4 +1,4 @@
-# Redirect www to non-www
-https://www.personaltrainingbangkokp1.com/* https://personaltrainingbangkokp1.com/:splat 301!
+# Redirect non-www to www (Netlify best practice)
+https://personaltrainingbangkokp1.com/* https://www.personaltrainingbangkokp1.com/:splat 301!
 # Handle old URLs
 /home / 301
