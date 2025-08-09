@@ -18,23 +18,6 @@
 [build.processing.images]
   compress = false  # Disabled - we handle image optimization manually
 
-# Enable server-side optimizations
-[build.environment]
-  NODE_VERSION = "18"
-
-# Performance optimizations
-[[edge_functions]]
-  function = "server-timing"
-  path = "/*"
-
-# Preload critical resources
-[[headers]]
-  for = "/"
-  [headers.values]
-    Link = '''</style.css>; rel=preload; as=style,
-              </images/personal-trainer-bangkok-logo-40w.png>; rel=preload; as=image,
-              </images/ramin-razy-personal-trainer-bangkok-372w.jpg>; rel=preload; as=image'''
-
 [[headers]]
   for = "/*"
   [headers.values]
@@ -43,9 +26,6 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    # Performance optimizations
-    Content-Encoding = "gzip"
-    Vary = "Accept-Encoding"
 
 # HTML files - shorter cache for updates
 [[headers]]
