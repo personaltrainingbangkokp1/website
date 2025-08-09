@@ -24,6 +24,11 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://personaltrainingbangkokp1.com/">
     
+    <!-- Cache busting and performance optimization -->
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <!-- Performance Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1976,8 +1981,17 @@
         }
 
         // Initialize YouTube facades
-        document.querySelectorAll('.youtube-facade').forEach(facade => {
-            facade.addEventListener('click', () => loadYouTubeVideo(facade));
+        document.addEventListener('DOMContentLoaded', function() {
+            const facades = document.querySelectorAll('.youtube-facade');
+            console.log('YouTube facades found:', facades.length);
+            
+            facades.forEach((facade, index) => {
+                console.log(`Initializing facade ${index + 1} with video ID:`, facade.dataset.videoId);
+                facade.addEventListener('click', () => {
+                    console.log('YouTube facade clicked, loading video:', facade.dataset.videoId);
+                    loadYouTubeVideo(facade);
+                });
+            });
         });
     </script>
 </body>
