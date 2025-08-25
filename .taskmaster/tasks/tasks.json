@@ -1,0 +1,218 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Set Up Google Fonts Integration",
+        "description": "Configure and optimize Google Fonts loading for Poppins (headings) and Open Sans (body text) with proper performance considerations.",
+        "details": "1. Add Google Fonts preconnect link in the head section for performance optimization:\n```html\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n```\n\n2. Import only the necessary font weights to minimize loading time:\n```html\n<link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap\" rel=\"stylesheet\">\n```\n\n3. Create CSS variables for font families in the :root selector for easy maintenance:\n```css\n:root {\n  --font-heading: 'Poppins', sans-serif;\n  --font-body: 'Open Sans', sans-serif;\n}\n```\n\n4. Implement font-display: swap for better performance during font loading:\n```css\n@font-face {\n  font-family: 'Poppins';\n  font-display: swap;\n}\n\n@font-face {\n  font-family: 'Open Sans';\n  font-display: swap;\n}\n```\n\n5. Consider adding a font loading strategy using the Font Loading API or a library like FontFaceObserver for more control over font loading behavior.",
+        "testStrategy": "1. Verify fonts are loading correctly across all browsers using browser dev tools.\n2. Test font loading performance using Lighthouse or WebPageTest.\n3. Ensure fallback fonts display properly while custom fonts are loading.\n4. Validate that no layout shifts occur when fonts load (check CLS in Core Web Vitals).\n5. Test with slow network connections to ensure optimal font loading experience.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 2,
+        "title": "Implement Typography Style System",
+        "description": "Create a comprehensive typography system with consistent sizing, line heights, and spacing using Poppins for headings and Open Sans for body text.",
+        "details": "1. Define a type scale using modern CSS techniques:\n```css\n:root {\n  --font-size-base: 1rem;\n  --font-size-sm: 0.875rem;\n  --font-size-lg: 1.125rem;\n  --font-size-xl: 1.25rem;\n  --font-size-2xl: 1.5rem;\n  --font-size-3xl: 1.875rem;\n  --font-size-4xl: 2.25rem;\n  \n  --line-height-tight: 1.2;\n  --line-height-normal: 1.5;\n  --line-height-relaxed: 1.75;\n}\n```\n\n2. Apply typography styles to elements:\n```css\nh1, h2, h3, h4, h5, h6 {\n  font-family: var(--font-heading);\n  font-weight: 600;\n  line-height: var(--line-height-tight);\n  margin-bottom: 0.5em;\n}\n\nh1 {\n  font-size: var(--font-size-4xl);\n  font-weight: 700;\n}\n\nh2 {\n  font-size: var(--font-size-3xl);\n}\n\nh3 {\n  font-size: var(--font-size-2xl);\n}\n\nbody, p, li, input, button {\n  font-family: var(--font-heading);\n  font-size: var(--font-size-base);\n  line-height: var(--line-height-normal);\n  color: #333;\n}\n```\n\n3. Implement responsive typography using clamp() for fluid sizing:\n```css\nh1 {\n  font-size: clamp(2rem, 5vw, 3rem);\n}\n\nh2 {\n  font-size: clamp(1.5rem, 4vw, 2.25rem);\n}\n```\n\n4. Create utility classes for text styles:\n```css\n.text-sm { font-size: var(--font-size-sm); }\n.text-base { font-size: var(--font-size-base); }\n.text-lg { font-size: var(--font-size-lg); }\n.font-bold { font-weight: 700; }\n.font-medium { font-weight: 500; }\n```\n\n5. Ensure proper letter-spacing and text-rendering for optimal readability:\n```css\nbody {\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n```",
+        "testStrategy": "1. Create a typography test page showing all heading levels and text styles.\n2. Verify consistent typography across different content sections.\n3. Test readability on various screen sizes and devices.\n4. Validate that line heights and spacing create a comfortable reading experience.\n5. Check for any font rendering issues across different browsers and operating systems.\n6. Ensure proper text wrapping and overflow handling.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Create Modern Testimonial Card Component",
+        "description": "Design and implement modern testimonial cards with dark backgrounds, vibrant orange and teal accents, high contrast design, and fitness-focused dynamic styling for a premium, energetic feel with bold typography.",
+        "status": "done",
+        "dependencies": [
+          1,
+          2
+        ],
+        "priority": "medium",
+        "details": "1. Create HTML structure for testimonial cards:\n```html\n<div class=\"testimonial-card\">\n  <div class=\"testimonial-header\">\n    <div class=\"testimonial-avatar\">\n      <img src=\"/path/to/avatar.jpg\" alt=\"Client Name\">\n    </div>\n    <div class=\"testimonial-meta\">\n      <h4 class=\"testimonial-name\">Client Name</h4>\n      <p class=\"testimonial-role\">Role/Location</p>\n    </div>\n  </div>\n  <div class=\"testimonial-content\">\n    <p>Testimonial text goes here...</p>\n  </div>\n  <div class=\"testimonial-accent\"></div>\n</div>\n```\n\n2. Style the testimonial cards with new brand aesthetic:\n```css\n:root {\n  --color-dark-bg: #121212;\n  --color-orange: #FF6B35;\n  --color-teal: #00E5FF;\n  --color-text-light: #FFFFFF;\n  --color-text-muted: #AAAAAA;\n}\n\n.testimonial-card {\n  background-color: var(--color-dark-bg);\n  color: var(--color-text-light);\n  border-radius: 12px;\n  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);\n  padding: 2rem;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n  margin-bottom: 1.5rem;\n  position: relative;\n  overflow: hidden;\n}\n\n.testimonial-card:hover {\n  transform: translateY(-5px);\n  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);\n}\n\n.testimonial-header {\n  display: flex;\n  align-items: center;\n  margin-bottom: 1.5rem;\n}\n\n.testimonial-avatar {\n  width: 70px;\n  height: 70px;\n  margin-right: 1.25rem;\n  flex-shrink: 0;\n  border: 2px solid var(--color-orange);\n  border-radius: 50%;\n  padding: 3px;\n}\n\n.testimonial-avatar img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  border-radius: 50%;\n}\n\n.testimonial-name {\n  font-family: var(--font-heading);\n  font-size: var(--font-size-xl);\n  font-weight: 700;\n  margin: 0 0 0.25rem;\n  color: var(--color-text-light);\n}\n\n.testimonial-role {\n  font-size: var(--font-size-sm);\n  color: var(--color-teal);\n  margin: 0;\n  font-weight: 500;\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n\n.testimonial-content {\n  font-family: var(--font-body);\n  line-height: var(--line-height-relaxed);\n  color: var(--color-text-muted);\n  font-size: var(--font-size-lg);\n  position: relative;\n  z-index: 1;\n}\n\n.testimonial-content p::before {\n  content: '\"';\n  font-family: var(--font-heading);\n  font-size: 4rem;\n  line-height: 0;\n  color: var(--color-orange);\n  opacity: 0.3;\n  position: absolute;\n  top: 0.5rem;\n  left: -1.5rem;\n}\n\n.testimonial-accent {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  height: 4px;\n  width: 100%;\n  background: linear-gradient(90deg, var(--color-orange), var(--color-teal));\n}\n```\n\n3. Create a responsive grid layout for testimonials:\n```css\n.testimonials-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 2rem;\n  padding: 2rem 0;\n}\n\n@media (max-width: 768px) {\n  .testimonials-grid {\n    grid-template-columns: 1fr;\n    gap: 1.5rem;\n  }\n  \n  .testimonial-card {\n    padding: 1.5rem;\n  }\n  \n  .testimonial-avatar {\n    width: 60px;\n    height: 60px;\n  }\n}\n```\n\n4. Add fitness-focused dynamic styling and animations:\n```css\n.testimonial-card {\n  /* ... existing styles ... */\n  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;\n}\n\n.testimonial-card:hover .testimonial-accent {\n  animation: pulse 1.5s infinite;\n}\n\n@keyframes pulse {\n  0% {\n    opacity: 0.6;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.6;\n  }\n}\n\n/* Add a fitness-themed icon option */\n.testimonial-card.with-icon::after {\n  content: '';\n  position: absolute;\n  top: 1.5rem;\n  right: 1.5rem;\n  width: 40px;\n  height: 40px;\n  background-image: url('/path/to/fitness-icon.svg');\n  background-size: contain;\n  background-repeat: no-repeat;\n  opacity: 0.15;\n}\n```",
+        "testStrategy": "1. Test the testimonial cards across different screen sizes to ensure responsive behavior.\n2. Verify that circular profile images display correctly with different image aspect ratios.\n3. Check that hover effects and transitions work smoothly across browsers.\n4. Ensure proper spacing and alignment of all elements within the cards.\n5. Test with different lengths of testimonial text to ensure proper text wrapping and card expansion.\n6. Validate accessibility of the testimonial components using screen readers and keyboard navigation.\n7. Verify that the dark background and high contrast text meet WCAG 2.1 AA standards.\n8. Test the gradient accent bar and animations for performance on lower-end devices.\n9. Ensure the vibrant orange (#FF6B35) and electric teal (#00E5FF) accents are consistent with the brand guidelines.\n10. Validate that the premium, energetic feel matches the fitness-focused aesthetic in the provided screenshot.",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Implement Responsive Layout System",
+        "description": "Create a mobile-first responsive layout system with proper container classes, consistent spacing, and improved visual hierarchy for the website redesign.",
+        "status": "pending",
+        "dependencies": [
+          2
+        ],
+        "priority": "high",
+        "details": "1. Define a container system with appropriate max-widths:\n```css\n.container {\n  width: 100%;\n  margin-left: auto;\n  margin-right: auto;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n\n@media (min-width: 640px) {\n  .container {\n    max-width: 640px;\n  }\n}\n\n@media (min-width: 768px) {\n  .container {\n    max-width: 768px;\n  }\n}\n\n@media (min-width: 1024px) {\n  .container {\n    max-width: 1024px;\n  }\n}\n\n@media (min-width: 1280px) {\n  .container {\n    max-width: 1280px;\n  }\n}\n```\n\n2. Create a spacing system using CSS variables:\n```css\n:root {\n  --space-1: 0.25rem;\n  --space-2: 0.5rem;\n  --space-3: 0.75rem;\n  --space-4: 1rem;\n  --space-6: 1.5rem;\n  --space-8: 2rem;\n  --space-12: 3rem;\n  --space-16: 4rem;\n  --space-20: 5rem;\n}\n\n.section {\n  padding-top: var(--space-12);\n  padding-bottom: var(--space-12);\n}\n\n@media (min-width: 768px) {\n  .section {\n    padding-top: var(--space-16);\n    padding-bottom: var(--space-16);\n  }\n}\n```\n\n3. Implement a flexible grid system with single column layout for specific sections:\n```css\n.grid {\n  display: grid;\n  gap: var(--space-4);\n}\n\n.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }\n.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }\n.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }\n.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }\n\n/* Single column layout for services section */\n.services-grid {\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: var(--space-6);\n}\n\n@media (min-width: 640px) {\n  .sm\\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }\n}\n\n@media (min-width: 768px) {\n  .md\\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }\n}\n\n@media (min-width: 1024px) {\n  .lg\\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }\n}\n```\n\n4. Create utility classes for margin and padding:\n```css\n.mt-4 { margin-top: var(--space-4); }\n.mb-4 { margin-bottom: var(--space-4); }\n.my-4 { margin-top: var(--space-4); margin-bottom: var(--space-4); }\n.p-4 { padding: var(--space-4); }\n.py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }\n.px-4 { padding-left: var(--space-4); padding-right: var(--space-4); }\n```\n\n5. Implement a visual hierarchy system with updated colors and styles:\n```css\n.visually-hidden {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border-width: 0;\n}\n\n.text-center { text-align: center; }\n.text-left { text-align: left; }\n.text-right { text-align: right; }\n\n.flex { display: flex; }\n.items-center { align-items: center; }\n.justify-between { justify-content: space-between; }\n\n/* Updated text colors */\n.text-black { color: #000000; }\n\n/* Social button styles */\n.social-button {\n  background-color: #000000;\n  color: #ffffff;\n  transition: all 0.3s ease;\n}\n\n.social-button:hover {\n  background-color: #00a2a2; /* Teal accent */\n}\n\n.social-button.alt:hover {\n  background-color: #ff6b00; /* Orange accent */\n}\n\n/* CTA button styles */\n.cta-phone {\n  background-color: #ff6b00; /* Orange */\n  color: #ffffff;\n  padding: var(--space-4) var(--space-8);\n  border-radius: 4px;\n  font-weight: bold;\n}\n\n/* Remove border from spots-left element */\n.spots-left {\n  font-weight: bold;\n  color: #ff6b00;\n  /* No border */\n}\n```",
+        "testStrategy": "1. Test the responsive layout on various devices and screen sizes (mobile, tablet, desktop).\n2. Verify that container classes maintain proper width constraints and centering.\n3. Check that spacing is consistent throughout the site using the defined spacing system.\n4. Validate that the grid system responds correctly at different breakpoints.\n5. Test visual hierarchy by reviewing content flow and readability across devices.\n6. Ensure that utility classes work as expected when applied to different elements.\n7. Verify the single column layout for hero section and services section.\n8. Test that social buttons display correctly with black background and appropriate hover effects.\n9. Validate that the orange phone CTA button is properly styled and positioned.\n10. Confirm the 'Only few spots left' element appears without a border.\n11. Check that text colors are updated to black throughout the site.",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Update top banner to 'Functional Aging Specialist'",
+            "description": "",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Implement social buttons with black background and teal/orange accent hover states",
+            "description": "",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Create single column hero section with orange phone CTA button",
+            "description": "",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Remove 'See My Success Stories' button from hero section",
+            "description": "",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Update 'Only few spots left' element to remove border",
+            "description": "",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Restructure layout to move 'Meet Your Coach' section before image",
+            "description": "",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Update text colors to black throughout the site",
+            "description": "",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 8,
+            "title": "Redesign services section with single column layout and emoji icons",
+            "description": "",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 9,
+            "title": "Update Coach Corner section with new video content",
+            "description": "",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          },
+          {
+            "id": 10,
+            "title": "Add 5 new FAQ videos to FAQ section",
+            "description": "",
+            "status": "pending",
+            "dependencies": [],
+            "details": "",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Implement Visual Design Elements",
+        "description": "Add modern visual design elements including soft box shadows, consistent border-radius, proper color contrast, and smooth hover transitions.",
+        "details": "1. Define a design token system for visual elements:\n```css\n:root {\n  /* Colors */\n  --color-primary: #FF5A5F; /* Airbnb-inspired primary color */\n  --color-primary-dark: #FF385C;\n  --color-secondary: #00A699;\n  --color-text: #484848;\n  --color-text-light: #767676;\n  --color-background: #FFFFFF;\n  --color-background-alt: #F7F7F7;\n  --color-border: #DDDDDD;\n  \n  /* Shadows */\n  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);\n  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);\n  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);\n  \n  /* Border Radius */\n  --radius-sm: 4px;\n  --radius-md: 8px;\n  --radius-lg: 12px;\n  --radius-full: 9999px;\n  \n  /* Transitions */\n  --transition-fast: 150ms ease;\n  --transition-normal: 300ms ease;\n  --transition-slow: 500ms ease;\n}\n```\n\n2. Create reusable component styles with the design tokens:\n```css\n.card {\n  background-color: var(--color-background);\n  border-radius: var(--radius-lg);\n  box-shadow: var(--shadow-md);\n  transition: transform var(--transition-normal), box-shadow var(--transition-normal);\n}\n\n.card:hover {\n  transform: translateY(-4px);\n  box-shadow: var(--shadow-lg);\n}\n\n.btn {\n  display: inline-block;\n  padding: 0.75rem 1.5rem;\n  font-family: var(--font-heading);\n  font-weight: 600;\n  font-size: var(--font-size-base);\n  line-height: 1.5;\n  text-align: center;\n  text-decoration: none;\n  border-radius: var(--radius-md);\n  transition: all var(--transition-fast);\n  cursor: pointer;\n}\n\n.btn-primary {\n  background-color: var(--color-primary);\n  color: white;\n  border: none;\n}\n\n.btn-primary:hover {\n  background-color: var(--color-primary-dark);\n}\n```\n\n3. Implement consistent form elements:\n```css\n.form-input {\n  display: block;\n  width: 100%;\n  padding: 0.75rem 1rem;\n  font-family: var(--font-body);\n  font-size: var(--font-size-base);\n  line-height: 1.5;\n  color: var(--color-text);\n  background-color: var(--color-background);\n  border: 1px solid var(--color-border);\n  border-radius: var(--radius-md);\n  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);\n}\n\n.form-input:focus {\n  outline: none;\n  border-color: var(--color-primary);\n  box-shadow: 0 0 0 3px rgba(255, 90, 95, 0.2);\n}\n```\n\n4. Add subtle animations and transitions:\n```css\n@keyframes fadeIn {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}\n\n.animate-fade-in {\n  animation: fadeIn var(--transition-normal);\n}\n\n.hover-lift {\n  transition: transform var(--transition-fast);\n}\n\n.hover-lift:hover {\n  transform: translateY(-2px);\n}\n```\n\n5. Ensure proper color contrast for accessibility:\n```css\n/* High contrast text on colored backgrounds */\n.bg-primary {\n  background-color: var(--color-primary);\n  color: white;\n}\n\n/* Ensure links are distinguishable */\na {\n  color: var(--color-primary);\n  text-decoration: none;\n  transition: color var(--transition-fast);\n}\n\na:hover {\n  color: var(--color-primary-dark);\n  text-decoration: underline;\n}\n```",
+        "testStrategy": "1. Verify consistent application of design tokens across all UI elements.\n2. Test hover states and transitions for smoothness and consistency.\n3. Validate color contrast ratios using WCAG 2.1 AA standards (minimum 4.5:1 for normal text).\n4. Check that border-radius is consistently applied (12px) across all appropriate elements.\n5. Test animations and transitions at different screen sizes and browsers.\n6. Ensure box shadows render correctly across different browsers and devices.\n7. Validate that the visual design maintains the Airbnb-inspired aesthetic.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          4
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Optimize Performance and Accessibility",
+        "description": "Ensure the website meets modern performance and accessibility standards while maintaining the new visual design.",
+        "details": "1. Optimize image loading with modern techniques:\n```html\n<!-- Use modern image formats with fallbacks -->\n<picture>\n  <source srcset=\"image.webp\" type=\"image/webp\">\n  <source srcset=\"image.jpg\" type=\"image/jpeg\">\n  <img src=\"image.jpg\" alt=\"Description\" loading=\"lazy\" width=\"800\" height=\"600\">\n</picture>\n```\n\n2. Implement proper semantic HTML structure:\n```html\n<header role=\"banner\">\n  <!-- Header content -->\n</header>\n\n<main role=\"main\">\n  <section aria-labelledby=\"section-title\">\n    <h2 id=\"section-title\">Section Title</h2>\n    <!-- Section content -->\n  </section>\n</main>\n\n<footer role=\"contentinfo\">\n  <!-- Footer content -->\n</footer>\n```\n\n3. Add focus styles for keyboard navigation:\n```css\n:focus {\n  outline: 2px solid var(--color-primary);\n  outline-offset: 2px;\n}\n\n/* Only hide focus styles for mouse users, maintain for keyboard */\n.js-focus-visible :focus:not(.focus-visible) {\n  outline: none;\n}\n```\n\n4. Optimize CSS delivery:\n```html\n<!-- Critical CSS inline in head -->\n<style>\n  /* Critical styles for above-the-fold content */\n</style>\n\n<!-- Non-critical CSS with preload -->\n<link rel=\"preload\" href=\"styles.css\" as=\"style\" onload=\"this.onload=null;this.rel='stylesheet'\">\n<noscript><link rel=\"stylesheet\" href=\"styles.css\"></noscript>\n```\n\n5. Implement proper ARIA attributes where needed:\n```html\n<button aria-expanded=\"false\" aria-controls=\"dropdown-menu\">\n  Menu\n  <span aria-hidden=\"true\">▼</span>\n</button>\n<div id=\"dropdown-menu\" hidden>\n  <!-- Menu items -->\n</div>\n```\n\n6. Add proper color contrast checking in the CSS:\n```css\n/* Ensure text has sufficient contrast */\n.text-on-dark {\n  color: white;\n  /* Minimum contrast ratio of 4.5:1 against dark backgrounds */\n}\n\n.text-on-light {\n  color: var(--color-text);\n  /* Minimum contrast ratio of 4.5:1 against light backgrounds */\n}\n```\n\n7. Implement responsive images with srcset:\n```html\n<img \n  srcset=\"image-320w.jpg 320w, image-480w.jpg 480w, image-800w.jpg 800w\" \n  sizes=\"(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px\"\n  src=\"image-800w.jpg\" \n  alt=\"Description\"\n  loading=\"lazy\"\n>\n```",
+        "testStrategy": "1. Run Lighthouse audits to measure performance, accessibility, best practices, and SEO scores.\n2. Test keyboard navigation throughout the entire site.\n3. Validate HTML using W3C Validator.\n4. Test with screen readers (NVDA, VoiceOver) to ensure proper accessibility.\n5. Verify color contrast meets WCAG 2.1 AA standards using tools like WebAIM's Contrast Checker.\n6. Test page load performance on slow connections and measure Core Web Vitals (LCP, FID, CLS).\n7. Validate that all interactive elements are accessible via keyboard and have proper focus states.",
+        "priority": "high",
+        "dependencies": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Implement Cross-Browser Compatibility",
+        "description": "Ensure the modernized design works consistently across all modern browsers with appropriate fallbacks and progressive enhancement.",
+        "details": "1. Add appropriate CSS prefixing for cross-browser compatibility:\n```css\n.card {\n  display: flex;\n  display: -webkit-flex; /* Safari */\n  -webkit-transition: all 0.3s ease; /* Safari and older browsers */\n  transition: all 0.3s ease;\n}\n```\n\n2. Use feature detection with @supports:\n```css\n/* Base styles for all browsers */\n.card {\n  border: 1px solid var(--color-border);\n}\n\n/* Enhanced styles for browsers that support CSS Grid */\n@supports (display: grid) {\n  .card-container {\n    display: grid;\n    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n    gap: 1.5rem;\n  }\n}\n```\n\n3. Implement a CSS reset or normalize.css for consistent rendering:\n```css\n/* Modern CSS Reset */\n*, *::before, *::after {\n  box-sizing: border-box;\n}\n\nbody, h1, h2, h3, h4, p, figure, blockquote, dl, dd {\n  margin: 0;\n}\n\nul[role='list'], ol[role='list'] {\n  list-style: none;\n}\n\nhtml:focus-within {\n  scroll-behavior: smooth;\n}\n\nbody {\n  min-height: 100vh;\n  text-rendering: optimizeSpeed;\n  line-height: 1.5;\n}\n\nimg, picture {\n  max-width: 100%;\n  display: block;\n}\n\ninput, button, textarea, select {\n  font: inherit;\n}\n```\n\n4. Add polyfills for older browsers when necessary:\n```html\n<!-- Example: polyfill for CSS variables in IE11 -->\n<script src=\"https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2\"></script>\n<script>\n  cssVars({\n    // Options\n    onlyLegacy: true\n  });\n</script>\n```\n\n5. Test and fix flexbox issues in older browsers:\n```css\n/* Flexbox with fallbacks */\n.container {\n  display: block; /* Fallback */\n}\n\n@supports (display: flex) {\n  .container {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n  }\n}\n```\n\n6. Implement graceful degradation for modern CSS features:\n```css\n/* Fallback for browsers that don't support CSS Grid */\n.gallery {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.gallery-item {\n  width: 100%;\n  margin-bottom: 1rem;\n}\n\n@media (min-width: 768px) {\n  .gallery-item {\n    width: calc(50% - 0.5rem);\n  }\n}\n\n/* Modern browsers with CSS Grid support */\n@supports (display: grid) {\n  .gallery {\n    display: grid;\n    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n    gap: 1rem;\n  }\n  \n  .gallery-item {\n    width: auto;\n    margin-bottom: 0;\n  }\n}\n```",
+        "testStrategy": "1. Test the website on all major browsers (Chrome, Firefox, Safari, Edge).\n2. Verify layout consistency across browsers using tools like BrowserStack or CrossBrowserTesting.\n3. Test on older versions of browsers to ensure graceful degradation.\n4. Validate that fallbacks work correctly when modern CSS features aren't supported.\n5. Check for any browser-specific rendering issues, especially with shadows, transitions, and flexbox/grid layouts.\n6. Test on different operating systems (Windows, macOS, iOS, Android) to ensure consistent rendering.\n7. Verify that polyfills load and function correctly when needed.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Final Integration and Testing",
+        "description": "Integrate all modernized components with the existing website functionality and conduct comprehensive testing to ensure everything works together seamlessly.",
+        "details": "1. Create a comprehensive integration checklist:\n   - Verify all existing functionality remains intact\n   - Ensure all links and navigation work correctly\n   - Check that forms submit properly\n   - Validate that third-party integrations continue to function\n   - Test all interactive elements with the new styling\n\n2. Implement a CSS organization strategy for the final codebase:\n```css\n/* 1. Base Styles */\n@import 'base/reset.css';\n@import 'base/typography.css';\n@import 'base/variables.css';\n\n/* 2. Layout Components */\n@import 'layout/grid.css';\n@import 'layout/container.css';\n@import 'layout/header.css';\n@import 'layout/footer.css';\n\n/* 3. UI Components */\n@import 'components/buttons.css';\n@import 'components/cards.css';\n@import 'components/testimonials.css';\n@import 'components/forms.css';\n\n/* 4. Utilities */\n@import 'utilities/spacing.css';\n@import 'utilities/colors.css';\n@import 'utilities/visibility.css';\n```\n\n3. Create a deployment strategy:\n   - Set up a staging environment for final testing\n   - Implement a rollback plan in case of issues\n   - Consider a phased rollout of new design elements\n   - Plan for caching strategies and CDN configuration\n\n4. Document the new design system:\n```markdown\n# Design System Documentation\n\n## Typography\n- Headings: Poppins (500, 600, 700)\n- Body: Open Sans (400, 500, 600)\n- Type Scale: [Include scale details]\n\n## Colors\n- Primary: #FF5A5F\n- Secondary: #00A699\n- Text: #484848\n- [Include all color tokens]\n\n## Components\n- Cards\n- Buttons\n- Testimonials\n- [Include usage examples]\n\n## Layout\n- Container system\n- Grid system\n- Spacing system\n```\n\n5. Implement before/after comparison views for stakeholder review:\n```html\n<div class=\"comparison-container\">\n  <div class=\"comparison-item\">\n    <h3>Before</h3>\n    <img src=\"before-screenshot.jpg\" alt=\"Before redesign\">\n  </div>\n  <div class=\"comparison-item\">\n    <h3>After</h3>\n    <img src=\"after-screenshot.jpg\" alt=\"After redesign\">\n  </div>\n</div>\n```\n\n6. Create a maintenance plan for the new design system:\n   - Document all new CSS classes and their purposes\n   - Provide examples of how to use the new components\n   - Create guidelines for adding new elements in the future\n   - Set up a process for design system updates",
+        "testStrategy": "1. Conduct comprehensive cross-browser testing on all pages.\n2. Perform user acceptance testing with stakeholders.\n3. Test all existing functionality to ensure it works with the new design.\n4. Validate responsive behavior across devices (mobile, tablet, desktop).\n5. Conduct performance testing to ensure the site maintains or improves load times.\n6. Test all forms and interactive elements with the new styling.\n7. Verify accessibility compliance using automated tools and manual testing.\n8. Create a test report documenting all tested scenarios and results.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-08-24T10:08:29.130Z",
+      "updated": "2025-08-24T10:26:31.866Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

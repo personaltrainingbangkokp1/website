@@ -1,0 +1,75 @@
+# Website Modernization Project - Airbnb Aesthetic
+
+## Product Overview
+Transform the existing personal training website to adopt a modern, minimalist design with an "Airbnb aesthetic" that is friendly, clean, and visually appealing.
+
+## Objectives
+- Modernize typography with Google Fonts (Poppins for headings, Open Sans for body)
+- Redesign testimonial cards with modern styling and better visual hierarchy
+- Improve overall layout with better white space and responsive design
+- Maintain existing functionality while enhancing visual appeal
+
+## Target Outcome
+A modern, professional website that feels approachable and trustworthy, similar to Airbnb's design philosophy, with improved user experience on all devices.
+
+## Key Features
+
+### 1. Typography Enhancement
+- Import and implement Poppins font for all headings (h1, h2, h3)
+- Apply Open Sans for body text and paragraphs
+- Ensure consistent font sizing and line heights
+- Maintain readability across all screen sizes
+
+### 2. Modern Card Design
+- Redesign testimonial cards with modern styling
+- Implement subtle shadows and rounded corners (12px border-radius)
+- Add circular profile images for testimonials
+- Use Flexbox/Grid for clean layout
+- Ensure responsive stacking on mobile devices
+
+### 3. Layout and White Space
+- Create generous section padding for visual breathing room
+- Implement container classes with max-width and centering
+- Use mobile-first responsive approach
+- Apply consistent spacing using rem/em units
+- Improve visual hierarchy and content flow
+
+### 4. Visual Design Elements
+- Soft box shadows (0 4px 6px rgba(0, 0, 0, 0.1))
+- Consistent border-radius of 12px for cards
+- Proper color contrast and accessibility
+- Smooth hover transitions and animations
+- Modern, clean aesthetic throughout
+
+## Technical Requirements
+
+### Browser Support
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile responsive design
+- Progressive enhancement approach
+
+### Performance
+- Optimize Google Fonts loading with preconnect
+- Maintain fast loading times
+- Clean, efficient CSS code
+
+### Code Quality
+- Well-commented, modular CSS
+- Clear class naming conventions
+- Easy integration with existing codebase
+- Maintainable and scalable structure
+
+## Success Criteria
+- Modern, professional appearance
+- Improved user engagement
+- Better mobile experience
+- Maintained or improved page load speeds
+- Clean, maintainable code structure
+
+## Implementation Approach
+1. Add Google Fonts imports
+2. Update typography styles
+3. Create new testimonial card structure
+4. Implement responsive layout improvements
+5. Add proper spacing and white space
+6. Test across devices and browsers

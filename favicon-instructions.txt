@@ -1,0 +1,17 @@
+FAVICON SETUP INSTRUCTIONS
+
+The HTML is now ready for favicon files. You need to add these files to your root directory:
+
+1. favicon.ico (32x32 or 16x16 pixels)
+   - Should be your "P1" logo or a simple "R" for Ramin
+   - Save as favicon.ico in the root folder
+
+2. apple-touch-icon.png (180x180 pixels)
+   - Higher resolution version for iOS devices
+   - Save as apple-touch-icon.png in the root folder
+
+You can create these from your existing logo using:
+- Online tools like favicon.io or realfavicongenerator.net
+- Or any image editor (Photoshop, GIMP, etc.)
+
+Once added, your site will show your logo in browser tabs and bookmarks.
