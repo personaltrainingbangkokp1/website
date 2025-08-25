@@ -1009,7 +1009,9 @@
             transition: var(--transition);
             z-index: 10;
             cursor: pointer;
-            pointer-events: none;
+            pointer-events: auto;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
         
@@ -1043,6 +1045,9 @@
             cursor: pointer;
             overflow: hidden;
             border-radius: var(--border-radius);
+            pointer-events: auto;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .youtube-facade:hover .play-button {
@@ -1918,6 +1923,28 @@
                 gap: 10px;
             }
             
+            /* Enhanced mobile video support */
+            .youtube-facade {
+                min-height: 44px; /* iOS minimum touch target */
+                -webkit-user-select: none;
+                user-select: none;
+            }
+            
+            .video-play-overlay {
+                width: 80px;
+                height: 80px;
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .play-button {
+                min-height: 44px;
+                min-width: 44px;
+                pointer-events: auto;
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+            }
+            
             .gmb-button,
             .review-button {
                 min-width: auto;
@@ -2386,31 +2413,6 @@ Functional Training – Trains the body to move better in everyday life.</p>
         </div>
     </section>
 
-    <!-- Google My Business Section -->
-    <section class="gmb-section">
-        <div class="section-header">
-            <h2>Find Us on Google</h2>
-            <p>Power of One - Personal Training Bangkok</p>
-        </div>
-        <div class="gmb-content">
-            <div class="gmb-card">
-                <div class="gmb-info">
-                    <h3>🌟 Power of One - Personal Training Bangkok</h3>
-                    <p>Visit our Google My Business profile to see real client reviews, photos, and get directions to our locations.</p>
-                    <div class="gmb-buttons">
-                        <a href="https://share.google/oc2fQKK8Ituvk3FKw" target="_blank" class="gmb-button">View on Google Maps</a>
-                        <a href="https://share.google/oc2fQKK8Ituvk3FKw" target="_blank" class="review-button">Write a Google Review</a>
-                    </div>
-                    <div class="gmb-stats">
-                        <span class="stat">★★★★★ 5.0 Rating</span>
-                        <span class="stat">50+ Reviews</span>
-                        <span class="stat">Verified Business</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="cta-content">
@@ -2453,6 +2455,31 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 <div class="cta-badge">
                     <span class="badge-text">🔥 Limited Spots</span>
                     <span class="badge-subtext">Book Today & Save</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google My Business Section -->
+    <section class="gmb-section">
+        <div class="section-header">
+            <h2>Find Us on Google</h2>
+            <p>Power of One - Personal Training Bangkok</p>
+        </div>
+        <div class="gmb-content">
+            <div class="gmb-card">
+                <div class="gmb-info">
+                    <h3>🌟 Power of One - Personal Training Bangkok</h3>
+                    <p>Visit our Google My Business profile to see real client reviews, photos, and get directions to our locations.</p>
+                    <div class="gmb-buttons">
+                        <a href="https://share.google/oc2fQKK8Ituvk3FKw" target="_blank" class="gmb-button">View on Google Maps</a>
+                        <a href="https://share.google/oc2fQKK8Ituvk3FKw" target="_blank" class="review-button">Write a Google Review</a>
+                    </div>
+                    <div class="gmb-stats">
+                        <span class="stat">★★★★★ 5.0 Rating</span>
+                        <span class="stat">50+ Reviews</span>
+                        <span class="stat">Verified Business</span>
+                    </div>
                 </div>
             </div>
         </div>

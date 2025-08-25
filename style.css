@@ -746,6 +746,9 @@ footer {
     cursor: pointer;
     overflow: hidden;
     border-radius: var(--border-radius);
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .video-testimonial {
@@ -792,6 +795,32 @@ footer {
     .read-more-btn {
         padding: 5px 10px;
         font-size: 0.7rem;
+    }
+    
+    /* Enhanced mobile video support */
+    .youtube-facade {
+        min-height: 44px; /* iOS minimum touch target */
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    
+    .video-play-overlay {
+        width: 80px;
+        height: 80px;
+        min-height: 44px;
+        min-width: 44px;
+        pointer-events: auto;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        z-index: 10;
+    }
+    
+    .play-button {
+        min-height: 44px;
+        min-width: 44px;
+        pointer-events: auto;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
     
     .gmb-buttons {
