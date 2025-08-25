@@ -156,7 +156,11 @@ body {
 .business-name {
     font-weight: var(--font-weight-regular);
     color: #000000;
-    font-size: var(--font-body-size);
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
 }
 
 .header-phone {
