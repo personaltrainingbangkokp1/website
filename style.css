@@ -41,8 +41,8 @@
     --transition:all 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
     
     /* Modern Typography System - Simplified to 3 styles */
-    --font-heading:'Poppins',sans-serif;
-    --font-body:'Open Sans',sans-serif;
+    --font-heading:'Reddit Sans',sans-serif;
+    --font-body:'Inter',sans-serif;
     
     /* Font Sizes - Simplified System */
     --font-display:clamp(1.75rem,4vw,2.5rem);
@@ -80,6 +80,7 @@ body {
     line-height: var(--line-height-tight);
     color: var(--text-primary);
     margin-bottom: 1.5rem;
+    text-transform: uppercase;
 }
 
 /* Smaller card headers */
@@ -203,6 +204,84 @@ body {
     gap: 15px;
     align-items: center;
     margin-right: 20px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.nav-menu a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: var(--transition);
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.mobile-menu a:hover {
+    background: var(--accent-hover);
+    color: var(--primary);
 }
 
 .social-icon {
@@ -381,11 +460,15 @@ body {
 .ramin-content {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    max-width: 1200px;
+    gap: 20px;
+    max-width: 800px;
     margin: 0 auto;
     align-items: center;
     text-align: center;
+}
+
+.meet-ramin p {
+    margin-bottom: 0.75rem;
 }
 
 .ramin-image {
@@ -769,6 +852,25 @@ footer {
 }
 
 /* Mobile Responsive */
+/* Mobile Responsive Rules */
+@media (max-width: 768px) {
+    .social-icons {
+        display: none;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .site-header {
+        position: relative;
+    }
+}
+
 @media (max-width: 768px) {
     .business-name {
         font-size: 14px;
