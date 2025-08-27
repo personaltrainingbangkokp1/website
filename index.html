@@ -460,6 +460,7 @@
             line-height: var(--line-height-body);
             color: var(--text-primary);
             font-weight: var(--font-weight-regular);
+            background: var(--gradient-primary);
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -514,6 +515,24 @@
             color: var(--text-secondary);
             margin-bottom: 1.25rem;
             text-align: left;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        /* List Elements Styling */
+        ul, ol {
+            font-family: var(--font-body);
+            font-size: var(--font-body-size);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--line-height-body);
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
+        }
+        
+        ul li, ol li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
         }
 
@@ -632,7 +651,7 @@
 
         .header-phone {
             background: #FF6B35;
-            color: white;
+            color: var(--text-secondary);
             padding: 12px 24px;
             border-radius: 25px;
             text-decoration: none;
@@ -930,79 +949,48 @@
             }
         }
         
-        /* Apply animations to all text elements */
-        .section-header h2,
-        .section-header h3,
-        .service-item h3,
-        .feature-card h3,
-        .video-card h3,
-        .testimonial h3,
-        .contact-card h3,
-        .gmb-info h3,
-        .footer-column h4,
-        h2, h3, h4, h5, h6 {
-            opacity: 0;
-            animation: reveal-header 0.8s ease-out forwards;
-        }
-        
-        /* Hero h1 keeps its existing animation - exclude from global rule */
-        
-        .section-header p,
-        p, .paragraph,
-        .service-item p,
-        .feature-card p,
-        .testimonial p,
-        .video-card p,
-        .faq-answer,
-        .contact-card p,
-        .gmb-info p {
-            opacity: 0;
-            animation: reveal-text 0.6s ease-out forwards;
-        }
-        
-        /* Scroll reveal animations */
-        .service-item,
-        .feature-card,
-        .video-card,
-        .testimonial {
+        /* Scroll-based animations - elements start visible for accessibility */
+        .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            animation: fade-in-up 0.8s ease-out forwards;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         
-        .service-item:nth-child(1) { animation-delay: 0.1s; }
-        .service-item:nth-child(2) { animation-delay: 0.2s; }
-        .service-item:nth-child(3) { animation-delay: 0.3s; }
-        .service-item:nth-child(4) { animation-delay: 0.4s; }
+        .animate-on-scroll.fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+        }
         
-        .testimonial:nth-child(1) { animation-delay: 0.1s; }
-        .testimonial:nth-child(2) { animation-delay: 0.3s; }
-        .testimonial:nth-child(3) { animation-delay: 0.5s; }
-        .testimonial:nth-child(4) { animation-delay: 0.7s; }
+        .animate-on-scroll.fade-in {
+            opacity: 0;
+            transform: none;
+        }
         
-        /* Staggered animation delays for text elements */
-        .section-header h2 { animation-delay: 0.1s; }
-        .section-header p { animation-delay: 0.3s; }
+        .animate-on-scroll.slide-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
         
-        .service-item h3 { animation-delay: 0.2s; }
-        .service-item p:nth-of-type(1) { animation-delay: 0.4s; }
-        .service-item p:nth-of-type(2) { animation-delay: 0.5s; }
+        .animate-on-scroll.slide-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+        }
         
-        .feature-card h3 { animation-delay: 0.2s; }
-        .feature-card p { animation-delay: 0.4s; }
+        /* When elements are visible */
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
         
-        .video-card h3 { animation-delay: 0.2s; }
-        .video-card p { animation-delay: 0.4s; }
+        /* Hero animations remain immediate - keep existing styles */
         
-        .testimonial p { animation-delay: 0.3s; }
-        .testimonial-author { animation-delay: 0.5s; }
-        
-        .hero-text h1 { animation-delay: 0.2s; }
-        .hero-subtitle { animation-delay: 0.4s; }
-        .hero-cta-container { animation-delay: 0.6s; }
-        
-        .gmb-info h3 { animation-delay: 0.2s; }
-        .gmb-info p { animation-delay: 0.4s; }
+        /* Staggered animations for grouped elements */
+        .animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+        .animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+        .animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+        .animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+        .animate-on-scroll:nth-child(5) { transition-delay: 0.5s; }
+        .animate-on-scroll:nth-child(6) { transition-delay: 0.6s; }
         
         /* Enhanced hover micro-interactions */
         .service-item:hover,
@@ -1021,32 +1009,10 @@
                 animation: none;
             }
             
-            .service-item,
-            .feature-card,
-            .video-card,
-            .testimonial,
-            .section-header h2,
-            .section-header h3,
-            .service-item h3,
-            .feature-card h3,
-            .video-card h3,
-            .testimonial h3,
-            .contact-card h3,
-            .gmb-info h3,
-            .footer-column h4,
-            h2, h3, h4, h5, h6,
-            .section-header p,
-            p, .paragraph,
-            .service-item p,
-            .feature-card p,
-            .testimonial p,
-            .video-card p,
-            .faq-answer,
-            .contact-card p,
-            .gmb-info p {
-                animation: none;
-                opacity: 1;
-                transform: none;
+            .animate-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
             }
             
             .service-item:hover,
@@ -2785,7 +2751,7 @@
         This answers the "Who is this?" question early.
     -->
     <section class="meet-ramin" id="about">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll fade-in-up">
             <h2>Meet Your Coach, Ramin Razy</h2>
             <p>17+ years of experience helping Bangkok adults achieve their fitness goals</p>
         </div>
@@ -2814,27 +2780,27 @@
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll fade-in-up">
             <h2>My Services</h2>
             <p>Specialized training programs designed for adults and older adults who want to move better, feel stronger, and maintain their independence.</p>
         </div>
         <div class="services-grid">
-            <div class="service-item">
+            <div class="service-item animate-on-scroll fade-in-up">
                 <h3>💪 Personalized Strength & Mobility Training</h3>
                 <p>Tailored 1-on-1 programs designed to improve strength, flexibility, and functional movement.</p>
                 <p>Perfect for adults and older adults who want to move better, prevent injuries, and maintain independence in daily life.</p>
             </div>
-            <div class="service-item">
+            <div class="service-item animate-on-scroll fade-in-up">
                 <h3>🏢 Asoke & Condo Training Specialist</h3>
                 <p>Specialized personal training in Asoke condos and apartments, including Terminal 21, Exchange Tower, and surrounding high-rise buildings.</p>
                 <p>Bringing professional equipment and expertise directly to your condo gym or private space in the heart of Bangkok's business district. Perfect for busy professionals who want convenient, high-quality fitness training.</p>
             </div>
-            <div class="service-item">
+            <div class="service-item animate-on-scroll fade-in-up">
                 <h3>📹 Online & In-Person Coaching</h3>
                 <p>Flexible coaching options that fit your lifestyle.</p>
                 <p>Train live with me online via video or in-person, with real-time guidance, form correction, and customized programming to achieve your fitness goals safely and effectively.</p>
             </div>
-            <div class="service-item">
+            <div class="service-item animate-on-scroll fade-in-up">
                 <h3>🎯 Functional Aging & Lifestyle Support</h3>
                 <p>Specialized programs for older adults focused on maintaining mobility, balance, posture, and overall health.</p>
                 <p>I provide guidance on safe exercise, movement patterns, and healthy habits to enhance quality of life and longevity.</p>
@@ -2844,27 +2810,27 @@
 
     <!-- Why Choose Section -->
     <section class="why-functional">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll fade-in-up">
             <!-- CRO Improvement: More direct and benefit-focused headline -->
             <h2>The Power of One Difference: My Core Principles</h2>
             <p>I believe in a simple approach that gets results. It's built on three pillars that ensure your journey is effective, sustainable, and enjoyable.</p>
         </div>
         <div class="features-grid">
-            <div class="feature-card">
+            <div class="feature-card animate-on-scroll slide-in-left">
                 <div class="feature-icon">
                     ✨
                 </div>
                 <h3>Personalized Approach</h3>
                 <p>I don't believe in cookie-cutter workouts. Your plan is uniquely tailored to your body, goals, and lifestyle. It's about what works for YOU, not what's trending.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card animate-on-scroll slide-in-left">
                 <div class="feature-icon">
                     🎓
                 </div>
                 <h3>Science-Based Training</h3>
                 <p>My programs are built on proven principles of exercise physiology and biomechanics, not fitness fads. This ensures every workout is safe, effective, and gets you closer to your goals.</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card animate-on-scroll slide-in-left">
                 <div class="feature-icon">
                     🚀
                 </div>
@@ -2876,12 +2842,12 @@
     
     <!-- Expert Insights Section (New Section for Video Embeds) -->
     <section class="expert-insights" id="videos">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll fade-in-up">
             <h2>From the Coach's Corner</h2>
             <p>Get a taste of my training philosophy and methods. Here are some of my most popular videos on personalized training, functional fitness, and online coaching.</p>
         </div>
         <div class="expert-insights-grid">
-            <div class="video-card">
+            <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <!-- YouTube Facade for Bodyweight Training -->
                     <div class="youtube-facade" data-video-id="LLaMBiJm-KU" data-params="si=Cjn9g4KcMfBua-Op">
@@ -2900,7 +2866,7 @@
                 <h3>Personal Training Bangkok - 4 Step Personalized Training</h3>
                 <p>4-Step Personalized Training – Every session includes a dynamic warm-up, functional strength training, targeted focus work, and a guided cool-down—tailored to your goals, fitness level, and lifestyle.</p>
             </div>
-            <div class="video-card">
+            <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <!-- YouTube Facade for Kettlebell Training -->
                     <div class="youtube-facade" data-video-id="Wcm-7JOvTu0" data-params="si=wKjxvK1B37tlHJgo">
@@ -2920,7 +2886,7 @@
                 <p>Traditional Strength Training – Isolates muscles for size and power.
 Functional Training – Trains the body to move better in everyday life.</p>
             </div>
-            <div class="video-card">
+            <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <!-- YouTube Facade for Online Personal Training -->
                     <div class="youtube-facade" data-video-id="Kzvt0rpo1mc" data-params="si=XgJAdTZV88LAoVex">
@@ -2944,7 +2910,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
 
     <!-- Success Stories -->
     <section class="success-stories" id="testimonials">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll fade-in-up">
             <h2>Bangkok Client Success Stories</h2>
             <p>Real transformations from real Bangkok residents</p>
         </div>
@@ -2970,7 +2936,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 <p>"Watch my transformation story and hear about my experience training with Ramin."</p>
                 <div class="testimonial-author">Client Success Story - Video Testimonial</div>
             </div>
-            <div class="testimonial">
+            <div class="testimonial animate-on-scroll slide-in-right">
                 <div class="stars">★★★★★</div>
                 <div class="testimonial-content">
                     <p class="testimonial-preview">"Ramin is the best trainer I have ever had. He is firm yet kind, highly knowledgeable, and meets me at my level. Over the past eight years we've become great friends..."</p>
@@ -2979,7 +2945,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 <button class="read-more-btn" onclick="toggleTestimonial(this)">Read More</button>
                 <div class="testimonial-author">Rosalie van Ruler Thaker<br><span class="author-title">SVP Brookfield Private Equity, London</span></div>
             </div>
-            <div class="testimonial">
+            <div class="testimonial animate-on-scroll slide-in-right">
                 <div class="stars">★★★★★</div>
                 <div class="testimonial-content">
                     <p class="testimonial-preview">"Two years ago, I was suffering from chronic back pain when a friend recommended I start training with Ramin. It's truly life-changing to finally be pain-free..."</p>
@@ -2988,7 +2954,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 <button class="read-more-btn" onclick="toggleTestimonial(this)">Read More</button>
                 <div class="testimonial-author">Nicole<br><span class="author-title">Senior Lawyer, Netherlands</span></div>
             </div>
-            <div class="testimonial">
+            <div class="testimonial animate-on-scroll slide-in-right">
                 <div class="stars">★★★★★</div>
                 <div class="testimonial-content">
                     <p class="testimonial-preview">"I've been training with Ramin for over 7 years now, and he's helped me become the fittest and strongest I've ever been. I feel more energized throughout the day..."</p>
@@ -3031,13 +2997,13 @@ Functional Training – Trains the body to move better in everyday life.</p>
     
     <!-- FAQ Section -->
     <section class="faq">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll fade-in-up">
             <h2>Expert Training Insights</h2>
             <p>Watch my most popular training videos covering personalized fitness, nutrition guidance, and specialized techniques for lasting results.</p>
         </div>
         <div class="faq-videos-grid">
             <!-- FAQ Video 1 -->
-            <div class="video-card">
+            <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <div class="youtube-facade" data-video-id="OVAaLyIUIcU" data-params="si=pUxv8y_bVZvDkXq_">
                         <img src="https://img.youtube.com/vi/OVAaLyIUIcU/maxresdefault.jpg" 
@@ -3057,7 +3023,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
             </div>
             
             <!-- FAQ Video 2 -->
-            <div class="video-card">
+            <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <div class="youtube-facade" data-video-id="_Cgo5B1famw" data-params="si=WktPT_b8FOnFxeJu">
                         <img src="https://img.youtube.com/vi/_Cgo5B1famw/maxresdefault.jpg" 
@@ -3077,7 +3043,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
             </div>
             
             <!-- FAQ Video 3 -->
-            <div class="video-card">
+            <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <div class="youtube-facade" data-video-id="MCQU7DpGnd0" data-params="si=TFu-m06jcJEHrEbq">
                         <img src="https://img.youtube.com/vi/MCQU7DpGnd0/maxresdefault.jpg" 
@@ -3097,7 +3063,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
             </div>
             
             <!-- FAQ Video 4 -->
-            <div class="video-card">
+            <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <div class="youtube-facade" data-video-id="CmN-QnyQtXw" data-params="si=UaZ8UWMv3cvhVCVZ">
                         <img src="https://img.youtube.com/vi/CmN-QnyQtXw/maxresdefault.jpg" 
@@ -3117,7 +3083,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
             </div>
             
             <!-- FAQ Video 5 -->
-            <div class="video-card">
+            <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <div class="youtube-facade" data-video-id="KWq_7lcafTU" data-params="si=TFu-m06jcJEHrEbq">
                         <img src="https://img.youtube.com/vi/KWq_7lcafTU/maxresdefault.jpg" 
@@ -3140,7 +3106,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
 
     <!-- Frequently Asked Questions Section -->
     <section class="faq-questions" id="faq">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll fade-in-up">
             <h2>Frequently Asked Questions</h2>
             <p>Get answers to the most common questions about personal training in Bangkok</p>
         </div>
@@ -3266,7 +3232,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
 
     <!-- Google My Business Section -->
     <section class="gmb-section">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll fade-in-up">
             <h2>Find Us on Google</h2>
             <p>Power of One - Personal Training Bangkok</p>
         </div>
@@ -3375,6 +3341,32 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 
                 // Close mobile menu after clicking a link
                 closeMobileMenu();
+            });
+        });
+    </script>
+    
+    <!-- Scroll Animation Script -->
+    <script>
+        // Intersection Observer for scroll-based animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '-50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all elements with animate-on-scroll class
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach(function(element) {
+                observer.observe(element);
             });
         });
     </script>
