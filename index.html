@@ -1647,6 +1647,32 @@
             flex-grow: 1;
         }
         
+        /* Subtle Watch Video Indicator - Clickable */
+        .watch-video-link {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            opacity: 0.7;
+            font-weight: var(--font-weight-medium);
+            z-index: 10;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .watch-video-link:hover {
+            opacity: 1;
+            color: var(--secondary);
+            background: rgba(0, 0, 0, 0.5);
+            transform: translateY(-1px);
+        }
+        
         /* Testimonials */
         .success-stories {
             padding: 100px 20px;
@@ -1715,6 +1741,7 @@
         .video-testimonial .testimonial-author {
             margin-top: auto;
         }
+        
 
         .video-container {
             position: relative;
@@ -1876,6 +1903,14 @@
             .read-more-btn {
                 padding: 5px 10px;
                 font-size: 0.7rem;
+            }
+            
+            /* Mobile responsiveness for watch video indicators */
+            .watch-video-link {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                font-size: 0.75rem;
+                padding: 3px 6px;
             }
         }
 
@@ -2533,13 +2568,14 @@
             
             .header-content {
                 max-width: 100%;
-                padding: 0;
+                padding: 0 15px;
                 margin: 0;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
-                gap: 15px;
+                position: relative;
+                height: 60px;
             }
             
             .header-contact {
@@ -2547,8 +2583,7 @@
                 flex-direction: row;
                 align-items: center;
                 gap: 15px;
-                justify-content: flex-end;
-                flex: 1;
+                justify-content: center;
                 position: static;
                 width: auto;
             }
@@ -2563,10 +2598,15 @@
             }
             
             .mobile-menu-toggle {
-                order: 0;
+                position: absolute;
+                left: 15px;
+                top: 50%;
+                transform: translateY(-50%);
                 margin: 0;
                 font-size: 24px;
                 padding: 8px;
+                color: white;
+                z-index: 10;
             }
         }
 
@@ -2919,6 +2959,7 @@
                 </div>
                 <h3>Personal Training Bangkok - 4 Step Personalized Training</h3>
                 <p>4-Step Personalized Training – Every session includes a dynamic warm-up, functional strength training, targeted focus work, and a guided cool-down—tailored to your goals, fitness level, and lifestyle.</p>
+                <a href="#" class="watch-video-link" onclick="playVideo(this, 'LLaMBiJm-KU'); return false;">Watch Video ▶</a>
             </div>
             <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
@@ -2939,6 +2980,7 @@
                 <h3>Personal Training Bangkok- Traditional Strength Training Vs Functional Strength Training</h3>
                 <p>Traditional Strength Training – Isolates muscles for size and power.
 Functional Training – Trains the body to move better in everyday life.</p>
+                <a href="#" class="watch-video-link" onclick="playVideo(this, 'Wcm-7JOvTu0'); return false;">Watch Video ▶</a>
             </div>
             <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
@@ -2958,6 +3000,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 </div>
                 <h3>Personal Training Bangkok - Online Personal Training</h3>
                 <p>Train from anywhere with expert guidance designed to help you get stronger, healthier, and more confident. My online coaching is fully tailored to your goals, lifestyle, and fitness level, whether you're just starting out or looking to take your training further.</p>
+                <a href="#" class="watch-video-link" onclick="playVideo(this, 'Kzvt0rpo1mc'); return false;">Watch Video ▶</a>
             </div>
         </div>
     </section>
@@ -2989,6 +3032,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 <div class="stars">★★★★★</div>
                 <p>"Watch my transformation story and hear about my experience training with Ramin."</p>
                 <div class="testimonial-author">Client Success Story - Video Testimonial</div>
+                <a href="#" class="watch-video-link" onclick="playVideo(this, 'D8L76ICTu_U'); return false;">Watch Video ▶</a>
             </div>
             <div class="testimonial animate-on-scroll slide-in-right">
                 <div class="stars">★★★★★</div>
@@ -3074,6 +3118,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 </div>
                 <h3>More Training Tips & Insights</h3>
                 <p>Essential training tips and insights to maximize your workout effectiveness and achieve sustainable results.</p>
+                <a href="#" class="watch-video-link" onclick="playVideo(this, 'OVAaLyIUIcU'); return false;">Watch Video ▶</a>
             </div>
             
             <!-- FAQ Video 2 -->
@@ -3094,6 +3139,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 </div>
                 <h3>Advanced Fitness Techniques</h3>
                 <p>Discover advanced training methods and techniques to break through plateaus and accelerate your fitness progress.</p>
+                <a href="#" class="watch-video-link" onclick="playVideo(this, '_Cgo5B1famw'); return false;">Watch Video ▶</a>
             </div>
             
             <!-- FAQ Video 3 -->
@@ -3114,6 +3160,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 </div>
                 <h3>Nutrition & Lifestyle Guidance</h3>
                 <p>Learn essential nutrition principles and lifestyle strategies that complement your training for optimal results.</p>
+                <a href="#" class="watch-video-link" onclick="playVideo(this, 'MCQU7DpGnd0'); return false;">Watch Video ▶</a>
             </div>
             
             <!-- FAQ Video 4 -->
@@ -3134,6 +3181,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 </div>
                 <h3>Functional Movement & Mobility</h3>
                 <p>Master functional movement patterns and mobility exercises to improve your daily life and athletic performance.</p>
+                <a href="#" class="watch-video-link" onclick="playVideo(this, 'CmN-QnyQtXw'); return false;">Watch Video ▶</a>
             </div>
             
             <!-- FAQ Video 5 -->
@@ -3154,6 +3202,7 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 </div>
                 <h3>Strength Training for Adults 40+</h3>
                 <p>Specialized strength training approaches designed specifically for adults over 40 to build muscle safely and effectively.</p>
+                <a href="#" class="watch-video-link" onclick="playVideo(this, 'KWq_7lcafTU'); return false;">Watch Video ▶</a>
             </div>
         </div>
     </section>
@@ -3441,6 +3490,26 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 }
             });
         });
+        
+        // Video playback function for watch video links
+        function playVideo(link, videoId) {
+            // Find the closest video card container
+            const videoCard = link.closest('.video-card') || link.closest('.video-testimonial');
+            if (!videoCard) return;
+            
+            // Find the YouTube facade element
+            const facade = videoCard.querySelector('.youtube-facade');
+            if (!facade) return;
+            
+            // Trigger the same mechanism as clicking on the facade
+            if (facade.click) {
+                facade.click();
+            } else {
+                // Fallback: create and trigger a click event
+                const clickEvent = new Event('click', { bubbles: true });
+                facade.dispatchEvent(clickEvent);
+            }
+        }
     </script>
     
     <script src="js/main.js" defer></script>
