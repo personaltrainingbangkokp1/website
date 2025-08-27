@@ -518,22 +518,16 @@
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
         }
 
-        /* List Elements Styling */
+        /* List Elements Styling - Clean formatting */
         ul, ol {
-            font-family: var(--font-body);
-            font-size: var(--font-body-size);
-            font-weight: var(--font-weight-regular);
-            line-height: var(--line-height-body);
-            color: var(--text-secondary);
-            margin-bottom: 1.25rem;
-            padding-left: 1.5rem;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
         
         ul li, ol li {
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            padding: 0;
         }
 
         .ui-text, .button-text, .label {
@@ -550,8 +544,9 @@
             background: var(--gradient-primary);
             color: white;
             padding: 8px 0;
-            position: relative;
-            z-index: 99;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
             overflow: hidden;
         }
         
@@ -614,8 +609,14 @@
             padding: 15px 20px;
             box-shadow: var(--shadow-sm);
             position: sticky;
-            top: 0;
-            z-index: 100;
+            top: 52px;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Hide header menu when scrolled */
+        .scrolled .site-header {
+            transform: translateY(-100%);
         }
 
         /* Header sticks after trust banner */
@@ -693,7 +694,10 @@
             gap: 30px;
             align-items: center;
             margin-right: 20px;
-            opacity: 0.95;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
         }
 
         .nav-menu a {
@@ -854,6 +858,7 @@
             display: flex;
             gap: 15px;
             align-items: center;
+            justify-content: flex-end;
         }
         
         /* Hero Section - CRO Optimized */
@@ -1063,6 +1068,11 @@
             align-items: center;
             text-align: center;
         }
+        
+        .hero-text {
+            max-width: 860px;
+            margin: 0 auto;
+        }
 
         .hero-text h1 {
             font-weight: 800;
@@ -1217,7 +1227,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            max-width: 1200px;
+            max-width: 860px;
             margin: 0 auto;
             align-items: center;
             text-align: center;
@@ -1253,7 +1263,7 @@
         }
 
         .ramin-bio h3 {
-            color: var(--primary);
+            color: var(--text-primary);
             margin-bottom: 25px;
         }
 
@@ -1772,7 +1782,7 @@
         }
 
         .stars {
-            color: var(--primary);
+            color: var(--text-primary);
             font-size: 1.2rem;
             margin-bottom: 1rem;
             letter-spacing: 2px;
@@ -2006,7 +2016,7 @@
         }
 
         .gmb-info h3 {
-            color: var(--primary);
+            color: var(--text-primary);
             font-size: 1.8rem;
             margin-bottom: 20px;
         }
@@ -2404,7 +2414,7 @@
         }
         
         .footer-column h4 {
-            color: var(--primary);
+            color: var(--text-primary);
             margin-bottom: 15px;
             font-size: 1.2rem;
             font-weight: 600;
@@ -3367,6 +3377,24 @@ Functional Training – Trains the body to move better in everyday life.</p>
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
             animatedElements.forEach(function(element) {
                 observer.observe(element);
+            });
+            
+            // Hide header menu on scroll
+            let ticking = false;
+            function updateScrollState() {
+                if (window.scrollY > 100) {
+                    document.body.classList.add('scrolled');
+                } else {
+                    document.body.classList.remove('scrolled');
+                }
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(updateScrollState);
+                    ticking = true;
+                }
             });
         });
     </script>
