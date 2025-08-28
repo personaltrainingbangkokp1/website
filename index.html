@@ -22,21 +22,50 @@
     
     
     <!-- Performance Resource Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://img.youtube.com">
-    <link rel="preconnect" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://img.youtube.com">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
     
-    <!-- Google Fonts - Reddit Sans and Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Preload key fonts -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/redditsans/v5/EYq3maFOxEGVj1HI5IvaQzk.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v19/UcC73FwrK3iLTB0BT5PfCPE.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Google Fonts - Optimized with display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Critical CSS - Inline above the fold styles -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#FF6B35;--primary-light:#FF8A5B;--primary-dark:#E55A2B;--secondary:#00E5FF;--secondary-light:#33EAFF;--secondary-dark:#00C9E6;--accent:#FFFFFF;--accent-hover:#F5F5F5;--text-primary:#FFFFFF;--text-secondary:#CCCCCC;--text-light:#CCCCCC;--text-dark:#333333;--bg-primary:#121212;--bg-secondary:#1A1A1A;--bg-light:#2A2A2A;--bg-white:#FFFFFF;--shadow-sm:0 2px 4px rgba(0,0,0,0.2);--shadow-md:0 4px 12px rgba(0,0,0,0.3);--shadow-lg:0 8px 24px rgba(0,0,0,0.4);--shadow-xl:0 12px 48px rgba(0,0,0,0.5);--shadow-glow:0 0 20px rgba(255,107,53,0.3);--gradient-primary:linear-gradient(135deg,#FF6B35 0%,#00E5FF 100%);--gradient-dark:linear-gradient(135deg,#121212 0%,#2A2A2A 100%);--gradient-accent:linear-gradient(90deg,#FF6B35,#00E5FF);--border-radius:12px;--transition:all 0.3s cubic-bezier(0.175,0.885,0.32,1.275);--font-heading:'Reddit Sans',sans-serif;--font-body:'Inter',sans-serif;--font-display:clamp(1.75rem,4vw,2.5rem);--font-body-size:1.125rem;--font-ui-size:1rem;--line-height-tight:1.2;--line-height-body:1.6;--line-height-ui:1.4;--font-weight-regular:400;--font-weight-medium:500;--font-weight-semibold:600}
+        body{font-family:var(--font-body);font-size:var(--font-body-size);line-height:var(--line-height-body);color:var(--text-primary);font-weight:var(--font-weight-regular);text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+        .trust-banner{background:var(--gradient-primary);color:white;text-align:center;padding:8px 20px;font-size:var(--font-ui-size);font-weight:var(--font-weight-medium);position:relative;z-index:99}
+        .trust-banner span{display:inline-block;margin:0 15px}
+        .business-header{background:white;color:var(--text-dark);padding:5px 20px;border-bottom:1px solid rgba(0,0,0,0.1)}
+        .business-content{max-width:1200px;margin:0 auto;display:flex;justify-content:center;align-items:center}
+        .logo-container{display:flex;align-items:center;gap:15px}
+        .business-name{font-weight:var(--font-weight-semibold);color:var(--text-dark);font-size:16px;white-space:nowrap}
+        .header-phone{background:#FF6B35;color:white;padding:12px 24px;border-radius:25px;text-decoration:none;font-weight:var(--font-weight-semibold);transition:var(--transition);box-shadow:0 4px 12px rgba(255,107,53,0.3)}
+        .hero{background:var(--gradient-primary);color:white;min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:60px 20px}
+        .hero-content{max-width:1200px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:60px;align-items:center;text-align:center}
+        h1{font-family:var(--font-heading);font-size:var(--font-display);font-weight:800;line-height:var(--line-height-tight);color:white;margin-bottom:1.5rem;text-transform:uppercase;text-shadow:0 4px 8px rgba(0,0,0,0.2)}
+        .hero-subtitle{font-size:var(--font-body-size);margin-bottom:2rem;opacity:0.95;color:white}
+        .cta-button{display:inline-block;background:var(--accent);color:var(--text-primary);padding:18px 35px;border-radius:50px;text-decoration:none;font-weight:var(--font-weight-semibold);font-size:var(--font-body-size);transition:var(--transition);box-shadow:0 8px 20px rgba(255,217,61,0.4);text-align:center;position:relative;overflow:hidden}
+        .cta-primary{background:var(--primary);color:white;font-size:1.2rem;padding:18px 40px;font-weight:800;box-shadow:0 8px 25px rgba(255,107,53,0.5)}
+        @media (max-width:768px){.trust-banner span{display:block;margin:5px 0}.business-name{font-size:14px}}
+    </style>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="images/personal-trainer-bangkok-logo-60w.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/personal-trainer-bangkok-logo-120w.png">
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Non-critical CSS - Load asynchronously -->
+    <link rel="preload" href="style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.min.css"></noscript>
     
     <!-- Open Graph Tags (no change needed, they are already great) -->
     <meta property="og:title" content="Personal Trainer Bangkok for Adults 40+ - Ramin Razy | Strength & Mobility Specialist">
@@ -266,8 +295,8 @@
         "itemListElement": [
             {
                 "@type": "VideoObject",
-                "name": "Deadlift Training Tutorial - Proper Form for Adults 40+",
-                "description": "Learn proper deadlift technique with Ramin, Bangkok's premier personal trainer specializing in functional training for adults over 40.",
+                "name": "Welcome to The Power of One",
+                "description": "Welcome to Power of One Personal Training Bangkok! Meet your personal trainer Ramin Razy and discover how personalized fitness coaching can transform your health and strength.",
                 "thumbnailUrl": "https://img.youtube.com/vi/Wcm-7JOvTu0/maxresdefault.jpg",
                 "uploadDate": "2024-01-15",
                 "duration": "PT3M45S",
@@ -279,8 +308,8 @@
             },
             {
                 "@type": "VideoObject",
-                "name": "Back Pain Relief Exercises - Functional Movement Training",
-                "description": "Effective exercises for back pain relief and mobility improvement, demonstrated by certified Functional Aging Specialist Ramin Razy.",
+                "name": "Personal Training Bangkok - 4 Step Personalized Training",
+                "description": "4-Step Personalized Training – Every session includes a dynamic warm-up, functional strength training, targeted focus work, and a guided cool-down—tailored to your goals, fitness level, and lifestyle.",
                 "thumbnailUrl": "https://img.youtube.com/vi/LLaMBiJm-KU/maxresdefault.jpg",
                 "uploadDate": "2024-01-22",
                 "duration": "PT4M12S",
@@ -292,8 +321,21 @@
             },
             {
                 "@type": "VideoObject",
-                "name": "Functional Strength Training for Adults 40+",
-                "description": "Age-appropriate strength training techniques focusing on functional movement patterns for everyday activities.",
+                "name": "Personal Training Bangkok- Traditional Strength Training Vs Functional Strength Training",
+                "description": "Discover the key differences between traditional gym training and functional fitness. Learn why functional training is more effective for real-world strength, everyday movement, and long-term health for adults 40+.",
+                "thumbnailUrl": "https://img.youtube.com/vi/a9Vy8hl_CNo/maxresdefault.jpg",
+                "uploadDate": "2024-01-30",
+                "duration": "PT4M25S",
+                "embedUrl": "https://www.youtube.com/embed/a9Vy8hl_CNo",
+                "publisher": {
+                    "@type": "Person",
+                    "name": "Ramin Razy - Personal Trainer Bangkok"
+                }
+            },
+            {
+                "@type": "VideoObject",
+                "name": "Personal Training Bangkok - Online Personal Training",
+                "description": "Train from anywhere with expert guidance designed to help you get stronger, healthier, and more confident. My online coaching is fully tailored to your goals, lifestyle, and fitness level.",
                 "thumbnailUrl": "https://img.youtube.com/vi/Kzvt0rpo1mc/maxresdefault.jpg",
                 "uploadDate": "2024-02-05",
                 "duration": "PT5M30S",
@@ -387,20 +429,22 @@
 
     <!-- Deferred Google Analytics for performance -->
     <script>
-      // Load Google Analytics after page load
+      // Load Google Analytics after page load with additional delay
       window.addEventListener('load', function() {
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-WXLXPS93SK';
-        document.head.appendChild(script);
-        
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WXLXPS93SK');
-        
-        // Make gtag available globally
-        window.gtag = gtag;
+        setTimeout(function() {
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-WXLXPS93SK';
+          document.head.appendChild(script);
+          
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-WXLXPS93SK');
+          
+          // Make gtag available globally
+          window.gtag = gtag;
+        }, 1000);
       });
       
       // Track phone number clicks
@@ -426,18 +470,20 @@
 
     <!-- Deferred Facebook Pixel for performance -->
     <script>
-      // Load Facebook Pixel after page load
+      // Load Facebook Pixel after page load with additional delay
       window.addEventListener('load', function() {
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'FB_PIXEL_ID');
-        fbq('track', 'PageView');
+        setTimeout(function() {
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', 'FB_PIXEL_ID');
+          fbq('track', 'PageView');
+        }, 1200);
       });
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -2878,10 +2924,17 @@
                 <!-- YouTube Facade for performance optimization -->
                 <span class="urgency-text">Only few spots left for this month!</span>
                 <div class="youtube-facade" data-video-id="Wcm-7JOvTu0" data-params="si=2cpSJfuNYsS_CGuu">
-                    <img src="https://img.youtube.com/vi/Wcm-7JOvTu0/maxresdefault.jpg" 
+                    <img src="https://img.youtube.com/vi/Wcm-7JOvTu0/hqdefault.jpg" 
+                         srcset="https://img.youtube.com/vi/Wcm-7JOvTu0/mqdefault.jpg 320w, 
+                                 https://img.youtube.com/vi/Wcm-7JOvTu0/hqdefault.jpg 480w,
+                                 https://img.youtube.com/vi/Wcm-7JOvTu0/sddefault.jpg 640w"
+                         sizes="(max-width: 480px) 320px, (max-width: 768px) 480px, 640px"
                          alt="Ramin Razy Personal Training Introduction Video - Bangkok Fitness Coach" 
                          class="youtube-thumbnail" 
+                         width="480" 
+                         height="360"
                          loading="lazy"
+                         decoding="async"
                          width="480" 
                          height="360"
                          >
@@ -2914,7 +2967,16 @@
                 <picture>
                     <source media="(max-width: 768px)" srcset="images/ramin-razy-personal-trainer-bangkok-372w.jpg 1x" sizes="(max-width: 768px) 372px">
                     <source media="(min-width: 769px)" srcset="images/ramin-razy-personal-trainer-bangkok-500w.jpg 1x" sizes="(min-width: 769px) 500px">
-                    <img src="images/ramin-razy-personal-trainer-bangkok-372w.jpg" alt="Ramin Razy - Certified Personal Trainer in Bangkok, Thailand specializing in functional fitness, weight loss and strength training" class="ramin-profile-photo" width="372" height="496" loading="lazy">
+                    <img 
+                        src="images/ramin-razy-personal-trainer-bangkok-372w.jpg" 
+                        srcset="images/ramin-razy-personal-trainer-bangkok-372w.jpg 372w, images/ramin-razy-personal-trainer-bangkok-500w.jpg 500w"
+                        sizes="(max-width: 768px) 250px, (max-width: 1200px) 300px, 372px"
+                        alt="Ramin Razy - Certified Personal Trainer in Bangkok, Thailand specializing in functional fitness, weight loss and strength training" 
+                        class="ramin-profile-photo" 
+                        width="372" 
+                        height="496" 
+                        loading="lazy"
+                        decoding="async">
                 </picture>
             </div>
             
@@ -2999,10 +3061,16 @@
                 <div class="video-wrapper">
                     <!-- YouTube Facade for Bodyweight Training -->
                     <div class="youtube-facade" data-video-id="LLaMBiJm-KU" data-params="si=Cjn9g4KcMfBua-Op">
-                        <img src="https://img.youtube.com/vi/LLaMBiJm-KU/maxresdefault.jpg" 
+                        <img src="https://img.youtube.com/vi/LLaMBiJm-KU/hqdefault.jpg" 
+                             srcset="https://img.youtube.com/vi/LLaMBiJm-KU/mqdefault.jpg 320w, 
+                                     https://img.youtube.com/vi/LLaMBiJm-KU/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
                              alt="Bodyweight Training for Beginners - No Gym Required by Ramin Razy" 
                              class="youtube-thumbnail" 
+                             width="480" 
+                             height="360"
                              loading="lazy"
+                             decoding="async"
                              width="480" 
                              height="360">
                         <div class="video-play-overlay"></div>
@@ -3017,33 +3085,42 @@
             </div>
             <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
-                    <!-- YouTube Facade for Kettlebell Training -->
-                    <div class="youtube-facade" data-video-id="Wcm-7JOvTu0" data-params="si=wKjxvK1B37tlHJgo">
-                        <img src="https://img.youtube.com/vi/Wcm-7JOvTu0/maxresdefault.jpg" 
-                             alt="First Kettlebell Workout - Essential Training for Beginners by Ramin Razy" 
+                    <!-- YouTube Facade for Training Philosophy -->
+                    <div class="youtube-facade" data-video-id="a9Vy8hl_CNo" data-params="si=Pxcg8yrv1kUygkp0">
+                        <img src="https://img.youtube.com/vi/a9Vy8hl_CNo/hqdefault.jpg" 
+                             srcset="https://img.youtube.com/vi/a9Vy8hl_CNo/mqdefault.jpg 320w, 
+                                     https://img.youtube.com/vi/a9Vy8hl_CNo/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
+                             alt="Traditional Strength Training vs Functional Strength Training - Personal Trainer Bangkok" 
                              class="youtube-thumbnail" 
-                             loading="lazy"
                              width="480" 
-                             height="360">
+                             height="360"
+                             loading="lazy"
+                             decoding="async">
                         <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play kettlebell workout video">
+                        <button class="play-button" type="button" aria-label="Play training philosophy comparison video">
                             <span aria-hidden="true">▶</span>
                         </button>
                     </div>
                 </div>
-                <h3>Personal Training Bangkok- Traditional Strength Training Vs Functional Strength Training</h3>
-                <p>Traditional Strength Training – Isolates muscles for size and power.
-Functional Training – Trains the body to move better in everyday life.</p>
-                <a href="#" class="watch-video-link" onclick="playVideo(this, 'Wcm-7JOvTu0'); return false;">Watch Video ▶</a>
+                <h3>Traditional vs Functional Strength Training</h3>
+                <p>Discover the key differences between traditional gym training and functional fitness. Learn why functional training is more effective for real-world strength, everyday movement, and long-term health for adults 40+.</p>
+                <a href="#" class="watch-video-link" onclick="playVideo(this, 'a9Vy8hl_CNo'); return false;">Watch Video ▶</a>
             </div>
             <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <!-- YouTube Facade for Online Personal Training -->
                     <div class="youtube-facade" data-video-id="Kzvt0rpo1mc" data-params="si=XgJAdTZV88LAoVex">
-                        <img src="https://img.youtube.com/vi/Kzvt0rpo1mc/maxresdefault.jpg" 
+                        <img src="https://img.youtube.com/vi/Kzvt0rpo1mc/hqdefault.jpg" 
+                             srcset="https://img.youtube.com/vi/Kzvt0rpo1mc/mqdefault.jpg 320w, 
+                                     https://img.youtube.com/vi/Kzvt0rpo1mc/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
                              alt="Personal Training Bangkok - Online Personal Training by Ramin Razy" 
                              class="youtube-thumbnail" 
+                             width="480" 
+                             height="360"
                              loading="lazy"
+                             decoding="async"
                              width="480" 
                              height="360">
                         <div class="video-play-overlay"></div>
@@ -3070,10 +3147,16 @@ Functional Training – Trains the body to move better in everyday life.</p>
                 <div class="video-container">
                     <!-- YouTube Facade for Client Testimonial -->
                     <div class="youtube-facade" data-video-id="D8L76ICTu_U" data-params="si=dH2R2lwiflbZQpG4">
-                        <img src="https://img.youtube.com/vi/D8L76ICTu_U/maxresdefault.jpg" 
+                        <img src="https://img.youtube.com/vi/D8L76ICTu_U/hqdefault.jpg" 
+                             srcset="https://img.youtube.com/vi/D8L76ICTu_U/mqdefault.jpg 320w, 
+                                     https://img.youtube.com/vi/D8L76ICTu_U/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
                              alt="Client Success Story - Real Results with Personal Trainer Ramin Razy Bangkok" 
                              class="youtube-thumbnail" 
+                             width="480" 
+                             height="360"
                              loading="lazy"
+                             decoding="async"
                              width="480" 
                              height="360"
                              >
@@ -3158,10 +3241,16 @@ Functional Training – Trains the body to move better in everyday life.</p>
             <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <div class="youtube-facade" data-video-id="OVAaLyIUIcU" data-params="si=pUxv8y_bVZvDkXq_">
-                        <img src="https://img.youtube.com/vi/OVAaLyIUIcU/maxresdefault.jpg" 
+                        <img src="https://img.youtube.com/vi/OVAaLyIUIcU/hqdefault.jpg" 
+                             srcset="https://img.youtube.com/vi/OVAaLyIUIcU/mqdefault.jpg 320w, 
+                                     https://img.youtube.com/vi/OVAaLyIUIcU/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
                              alt="Training Tips by Ramin Razy" 
                              class="youtube-thumbnail" 
+                             width="480" 
+                             height="360"
                              loading="lazy"
+                             decoding="async"
                              width="480" 
                              height="360">
                         <div class="video-play-overlay"></div>
@@ -3170,8 +3259,8 @@ Functional Training – Trains the body to move better in everyday life.</p>
                         </button>
                     </div>
                 </div>
-                <h3>More Training Tips & Insights</h3>
-                <p>Essential training tips and insights to maximize your workout effectiveness and achieve sustainable results.</p>
+                <h3>What Makes Your Training Style Different?</h3>
+                <p>Discover what sets Power of One's training approach apart from traditional gyms and other personal trainers in Bangkok.</p>
                 <a href="#" class="watch-video-link" onclick="playVideo(this, 'OVAaLyIUIcU'); return false;">Watch Video ▶</a>
             </div>
             
@@ -3179,10 +3268,16 @@ Functional Training – Trains the body to move better in everyday life.</p>
             <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <div class="youtube-facade" data-video-id="_Cgo5B1famw" data-params="si=WktPT_b8FOnFxeJu">
-                        <img src="https://img.youtube.com/vi/_Cgo5B1famw/maxresdefault.jpg" 
+                        <img src="https://img.youtube.com/vi/_Cgo5B1famw/hqdefault.jpg" 
+                             srcset="https://img.youtube.com/vi/_Cgo5B1famw/mqdefault.jpg 320w, 
+                                     https://img.youtube.com/vi/_Cgo5B1famw/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
                              alt="Advanced Fitness Techniques by Ramin Razy" 
                              class="youtube-thumbnail" 
+                             width="480" 
+                             height="360"
                              loading="lazy"
+                             decoding="async"
                              width="480" 
                              height="360">
                         <div class="video-play-overlay"></div>
@@ -3191,8 +3286,8 @@ Functional Training – Trains the body to move better in everyday life.</p>
                         </button>
                     </div>
                 </div>
-                <h3>Advanced Fitness Techniques</h3>
-                <p>Discover advanced training methods and techniques to break through plateaus and accelerate your fitness progress.</p>
+                <h3>Can I Still Workout With An Injury?</h3>
+                <p>Learn how to safely continue training even when dealing with injuries, and discover modifications that keep you progressing.</p>
                 <a href="#" class="watch-video-link" onclick="playVideo(this, '_Cgo5B1famw'); return false;">Watch Video ▶</a>
             </div>
             
@@ -3200,10 +3295,16 @@ Functional Training – Trains the body to move better in everyday life.</p>
             <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <div class="youtube-facade" data-video-id="MCQU7DpGnd0" data-params="si=TFu-m06jcJEHrEbq">
-                        <img src="https://img.youtube.com/vi/MCQU7DpGnd0/maxresdefault.jpg" 
+                        <img src="https://img.youtube.com/vi/MCQU7DpGnd0/hqdefault.jpg" 
+                             srcset="https://img.youtube.com/vi/MCQU7DpGnd0/mqdefault.jpg 320w, 
+                                     https://img.youtube.com/vi/MCQU7DpGnd0/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
                              alt="Nutrition & Lifestyle Guidance by Ramin Razy" 
                              class="youtube-thumbnail" 
+                             width="480" 
+                             height="360"
                              loading="lazy"
+                             decoding="async"
                              width="480" 
                              height="360">
                         <div class="video-play-overlay"></div>
@@ -3212,8 +3313,8 @@ Functional Training – Trains the body to move better in everyday life.</p>
                         </button>
                     </div>
                 </div>
-                <h3>Nutrition & Lifestyle Guidance</h3>
-                <p>Learn essential nutrition principles and lifestyle strategies that complement your training for optimal results.</p>
+                <h3>How Do You Track My Progress?</h3>
+                <p>Understand the comprehensive methods used to monitor your fitness journey and ensure you're consistently moving toward your goals.</p>
                 <a href="#" class="watch-video-link" onclick="playVideo(this, 'MCQU7DpGnd0'); return false;">Watch Video ▶</a>
             </div>
             
@@ -3221,10 +3322,16 @@ Functional Training – Trains the body to move better in everyday life.</p>
             <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <div class="youtube-facade" data-video-id="CmN-QnyQtXw" data-params="si=UaZ8UWMv3cvhVCVZ">
-                        <img src="https://img.youtube.com/vi/CmN-QnyQtXw/maxresdefault.jpg" 
+                        <img src="https://img.youtube.com/vi/CmN-QnyQtXw/hqdefault.jpg" 
+                             srcset="https://img.youtube.com/vi/CmN-QnyQtXw/mqdefault.jpg 320w, 
+                                     https://img.youtube.com/vi/CmN-QnyQtXw/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
                              alt="Functional Movement & Mobility by Ramin Razy" 
                              class="youtube-thumbnail" 
+                             width="480" 
+                             height="360"
                              loading="lazy"
+                             decoding="async"
                              width="480" 
                              height="360">
                         <div class="video-play-overlay"></div>
@@ -3233,8 +3340,8 @@ Functional Training – Trains the body to move better in everyday life.</p>
                         </button>
                     </div>
                 </div>
-                <h3>Functional Movement & Mobility</h3>
-                <p>Master functional movement patterns and mobility exercises to improve your daily life and athletic performance.</p>
+                <h3>How Long Will It Take To See Results?</h3>
+                <p>Get realistic expectations about your fitness timeline and understand the factors that influence how quickly you'll see progress.</p>
                 <a href="#" class="watch-video-link" onclick="playVideo(this, 'CmN-QnyQtXw'); return false;">Watch Video ▶</a>
             </div>
             
@@ -3242,10 +3349,16 @@ Functional Training – Trains the body to move better in everyday life.</p>
             <div class="video-card animate-on-scroll fade-in-up">
                 <div class="video-wrapper">
                     <div class="youtube-facade" data-video-id="KWq_7lcafTU" data-params="si=TFu-m06jcJEHrEbq">
-                        <img src="https://img.youtube.com/vi/KWq_7lcafTU/maxresdefault.jpg" 
+                        <img src="https://img.youtube.com/vi/KWq_7lcafTU/hqdefault.jpg" 
+                             srcset="https://img.youtube.com/vi/KWq_7lcafTU/mqdefault.jpg 320w, 
+                                     https://img.youtube.com/vi/KWq_7lcafTU/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
                              alt="Strength Training for Adults 40+ by Ramin Razy" 
                              class="youtube-thumbnail" 
+                             width="480" 
+                             height="360"
                              loading="lazy"
+                             decoding="async"
                              width="480" 
                              height="360">
                         <div class="video-play-overlay"></div>
@@ -3254,8 +3367,8 @@ Functional Training – Trains the body to move better in everyday life.</p>
                         </button>
                     </div>
                 </div>
-                <h3>Strength Training for Adults 40+</h3>
-                <p>Specialized strength training approaches designed specifically for adults over 40 to build muscle safely and effectively.</p>
+                <h3>How Many Sessions Per Week Do I Need To See Results?</h3>
+                <p>Find out the optimal training frequency for your goals and lifestyle, and learn how to maximize results with the right schedule.</p>
                 <a href="#" class="watch-video-link" onclick="playVideo(this, 'KWq_7lcafTU'); return false;">Watch Video ▶</a>
             </div>
         </div>
