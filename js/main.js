@@ -100,14 +100,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.site-header');
     const trustBanner = document.querySelector('.trust-banner');
     
+    let trustBannerHeight = 0;
+    
     function handleStickyHeader() {
-        if (trustBanner) {
-            const trustBannerRect = trustBanner.getBoundingClientRect();
-            if (trustBannerRect.bottom <= 0) {
+        if (trustBanner && trustBannerHeight > 0) {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop >= trustBannerHeight) {
                 header?.classList.add('sticky');
             } else {
                 header?.classList.remove('sticky');
             }
+        }
+    }
+    
+    // Calculate trust banner height once on load and resize
+    function calculateTrustBannerHeight() {
+        if (trustBanner) {
+            trustBannerHeight = trustBanner.offsetHeight;
         }
     }
     
@@ -122,6 +131,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     window.addEventListener('scroll', requestTick);
+    window.addEventListener('resize', calculateTrustBannerHeight);
+    calculateTrustBannerHeight(); // Initial calculation
     handleStickyHeader(); // Check initial state
 
     // Initialize YouTube facades with enhanced functionality
