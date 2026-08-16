@@ -55,9 +55,10 @@
         .hero-subtitle{font-size:var(--font-body-size);margin-bottom:2rem;opacity:0.95;color:white}
         .cta-button{display:inline-block;background:var(--accent);color:var(--text-primary);padding:18px 35px;border-radius:50px;text-decoration:none;font-weight:var(--font-weight-semibold);font-size:var(--font-body-size);transition:var(--transition);box-shadow:0 8px 20px rgba(255,217,61,0.4);text-align:center;position:relative;overflow:hidden}
         .cta-primary{background:var(--primary);color:white;font-size:1.2rem;padding:18px 40px;font-weight:800;box-shadow:0 8px 25px rgba(255,107,53,0.5)}
-        .floating-cta{position:fixed;bottom:20px;right:20px;z-index:1000;background:var(--primary);color:white;padding:18px 30px;border-radius:50px;text-decoration:none;font-weight:800;font-size:1.1rem;box-shadow:0 8px 30px rgba(255,107,53,0.6);transition:all 0.3s ease;animation:pulse 2s infinite}
+        .floating-cta{position:fixed;bottom:20px;right:20px;z-index:1000;background:var(--primary);color:white;padding:18px 30px;border-radius:50px;text-decoration:none;font-weight:800;font-size:1.1rem;box-shadow:0 8px 30px rgba(255,107,53,0.6);transition:all 0.3s ease;animation:subtle-pulse 3s infinite;opacity:0;visibility:hidden}
+        .floating-cta.visible{opacity:1;visibility:visible}
         .floating-cta:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(255,107,53,0.8);background:var(--primary-dark)}
-        @keyframes pulse{0%,100%{box-shadow:0 8px 30px rgba(255,107,53,0.6)}50%{box-shadow:0 8px 40px rgba(255,107,53,0.9)}}
+        @keyframes subtle-pulse{0%,100%{box-shadow:0 8px 30px rgba(255,107,53,0.6)}50%{box-shadow:0 8px 32px rgba(255,107,53,0.7)}}
         @media (max-width:768px){.trust-banner span{display:block;margin:5px 0}.business-name{font-size:14px}.floating-cta{bottom:15px;right:15px;padding:15px 20px;font-size:0.95rem}}
     </style>
     
@@ -3119,133 +3120,145 @@
             <!-- Video 1: Meet Ha -->
             <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
                 <div class="video-wrapper">
-                    <div class="youtube-facade"
-                         data-video-id="Bw2jWv3OzX0"
-                         onclick="playYouTubeVideo(this)"
-                         style="background-image: url('https://img.youtube.com/vi/Bw2jWv3OzX0/maxresdefault.jpg'); background-size: cover; background-position: center;"
-                         tabindex="0"
-                         role="button"
-                         aria-label="Play transformation video: Meet Ha"
-                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
-                         width="640"
-                         height="360">
+                    <div class="youtube-facade" data-video-id="Bw2jWv3OzX0">
+                        <img src="https://img.youtube.com/vi/Bw2jWv3OzX0/hqdefault.jpg"
+                             srcset="https://img.youtube.com/vi/Bw2jWv3OzX0/mqdefault.jpg 320w,
+                                     https://img.youtube.com/vi/Bw2jWv3OzX0/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
+                             alt="Meet Ha - 70+ Vietnamese-Canadian client transformation story"
+                             class="youtube-thumbnail"
+                             width="480"
+                             height="360"
+                             loading="lazy"
+                             decoding="async">
                         <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play video">
+                        <button class="play-button" type="button" aria-label="Play transformation video: Meet Ha">
                             <span aria-hidden="true">▶</span>
                         </button>
                     </div>
                 </div>
-                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Ha</h3>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Ha — 70+ | Vietnamese-Canadian</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px; line-height: 1.5;"><strong>Goal:</strong> Build strength, improve overall health, and move with greater confidence and mobility.</p>
             </div>
 
             <!-- Video 2: Meet Louis -->
             <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
                 <div class="video-wrapper">
-                    <div class="youtube-facade"
-                         data-video-id="qVPCoIRD1Dc"
-                         onclick="playYouTubeVideo(this)"
-                         style="background-image: url('https://img.youtube.com/vi/qVPCoIRD1Dc/maxresdefault.jpg'); background-size: cover; background-position: center;"
-                         tabindex="0"
-                         role="button"
-                         aria-label="Play transformation video: Meet Louis"
-                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
-                         width="640"
-                         height="360">
+                    <div class="youtube-facade" data-video-id="qVPCoIRD1Dc">
+                        <img src="https://img.youtube.com/vi/qVPCoIRD1Dc/hqdefault.jpg"
+                             srcset="https://img.youtube.com/vi/qVPCoIRD1Dc/mqdefault.jpg 320w,
+                                     https://img.youtube.com/vi/qVPCoIRD1Dc/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
+                             alt="Meet Louis - 40+ Belgian client transformation story"
+                             class="youtube-thumbnail"
+                             width="480"
+                             height="360"
+                             loading="lazy"
+                             decoding="async">
                         <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play video">
+                        <button class="play-button" type="button" aria-label="Play transformation video: Meet Louis">
                             <span aria-hidden="true">▶</span>
                         </button>
                     </div>
                 </div>
-                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Louis</h3>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Louis — 40+ | Belgian</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px; line-height: 1.5;"><strong>Goal:</strong> Lose weight, build strength, increase energy, and feel fitter in everyday life.</p>
             </div>
 
             <!-- Video 3: Meet Bob & Hilda -->
             <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
                 <div class="video-wrapper">
-                    <div class="youtube-facade"
-                         data-video-id="O6V0073nz_w"
-                         onclick="playYouTubeVideo(this)"
-                         style="background-image: url('https://img.youtube.com/vi/O6V0073nz_w/maxresdefault.jpg'); background-size: cover; background-position: center;"
-                         tabindex="0"
-                         role="button"
-                         aria-label="Play transformation video: Meet Bob & Hilda"
-                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
-                         width="640"
-                         height="360">
+                    <div class="youtube-facade" data-video-id="O6V0073nz_w">
+                        <img src="https://img.youtube.com/vi/O6V0073nz_w/hqdefault.jpg"
+                             srcset="https://img.youtube.com/vi/O6V0073nz_w/mqdefault.jpg 320w,
+                                     https://img.youtube.com/vi/O6V0073nz_w/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
+                             alt="Meet Bob & Hilda - 50+ American couple transformation story"
+                             class="youtube-thumbnail"
+                             width="480"
+                             height="360"
+                             loading="lazy"
+                             decoding="async">
                         <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play video">
+                        <button class="play-button" type="button" aria-label="Play transformation video: Meet Bob & Hilda">
                             <span aria-hidden="true">▶</span>
                         </button>
                     </div>
                 </div>
-                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Bob & Hilda</h3>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Bob & Hilda — 50+ | American</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px; line-height: 1.5;"><strong>Goal:</strong> Build strength, improve fitness, and stay active and healthy as they get older.</p>
             </div>
 
             <!-- Video 4: Meet Ian -->
             <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
                 <div class="video-wrapper">
-                    <div class="youtube-facade"
-                         data-video-id="7kOyVqwDiEs"
-                         onclick="playYouTubeVideo(this)"
-                         style="background-image: url('https://img.youtube.com/vi/7kOyVqwDiEs/maxresdefault.jpg'); background-size: cover; background-position: center;"
-                         tabindex="0"
-                         role="button"
-                         aria-label="Play transformation video: Meet Ian"
-                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
-                         width="640"
-                         height="360">
+                    <div class="youtube-facade" data-video-id="7kOyVqwDiEs">
+                        <img src="https://img.youtube.com/vi/7kOyVqwDiEs/hqdefault.jpg"
+                             srcset="https://img.youtube.com/vi/7kOyVqwDiEs/mqdefault.jpg 320w,
+                                     https://img.youtube.com/vi/7kOyVqwDiEs/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
+                             alt="Meet Ian - 60+ English client transformation story"
+                             class="youtube-thumbnail"
+                             width="480"
+                             height="360"
+                             loading="lazy"
+                             decoding="async">
                         <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play video">
+                        <button class="play-button" type="button" aria-label="Play transformation video: Meet Ian">
                             <span aria-hidden="true">▶</span>
                         </button>
                     </div>
                 </div>
-                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Ian</h3>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Ian — 60+ | English</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px; line-height: 1.5;"><strong>Goal:</strong> Get back in shape, lose weight, build strength, and improve overall fitness.</p>
             </div>
 
             <!-- Video 5: Meet Vee -->
             <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
                 <div class="video-wrapper">
-                    <div class="youtube-facade"
-                         data-video-id="uI_Hw4lf3N4"
-                         onclick="playYouTubeVideo(this)"
-                         style="background-image: url('https://img.youtube.com/vi/uI_Hw4lf3N4/maxresdefault.jpg'); background-size: cover; background-position: center;"
-                         tabindex="0"
-                         role="button"
-                         aria-label="Play transformation video: Meet Vee"
-                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
-                         width="640"
-                         height="360">
+                    <div class="youtube-facade" data-video-id="uI_Hw4lf3N4">
+                        <img src="https://img.youtube.com/vi/uI_Hw4lf3N4/hqdefault.jpg"
+                             srcset="https://img.youtube.com/vi/uI_Hw4lf3N4/mqdefault.jpg 320w,
+                                     https://img.youtube.com/vi/uI_Hw4lf3N4/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
+                             alt="Meet Vee - 40+ Thai-Indian client transformation story"
+                             class="youtube-thumbnail"
+                             width="480"
+                             height="360"
+                             loading="lazy"
+                             decoding="async">
                         <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play video">
+                        <button class="play-button" type="button" aria-label="Play transformation video: Meet Vee">
                             <span aria-hidden="true">▶</span>
                         </button>
                     </div>
                 </div>
-                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Vee</h3>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Vee — 40+ | Thai-Indian</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px; line-height: 1.5;"><strong>Goal:</strong> Lose weight, become stronger, improve mobility, and feel better physically.</p>
             </div>
 
             <!-- Video 6: Meet Jamil -->
             <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
                 <div class="video-wrapper">
-                    <div class="youtube-facade"
-                         data-video-id="XNEoScgC2m8"
-                         onclick="playYouTubeVideo(this)"
-                         style="background-image: url('https://img.youtube.com/vi/XNEoScgC2m8/maxresdefault.jpg'); background-size: cover; background-position: center;"
-                         tabindex="0"
-                         role="button"
-                         aria-label="Play transformation video: Meet Jamil"
-                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
-                         width="640"
-                         height="360">
+                    <div class="youtube-facade" data-video-id="XNEoScgC2m8">
+                        <img src="https://img.youtube.com/vi/XNEoScgC2m8/hqdefault.jpg"
+                             srcset="https://img.youtube.com/vi/XNEoScgC2m8/mqdefault.jpg 320w,
+                                     https://img.youtube.com/vi/XNEoScgC2m8/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
+                             alt="Meet Jamil - 50+ English-Pakistani client transformation story"
+                             class="youtube-thumbnail"
+                             width="480"
+                             height="360"
+                             loading="lazy"
+                             decoding="async">
                         <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play video">
+                        <button class="play-button" type="button" aria-label="Play transformation video: Meet Jamil">
                             <span aria-hidden="true">▶</span>
                         </button>
                     </div>
                 </div>
-                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Jamil</h3>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Jamil — 50+ | English-Pakistani</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px; line-height: 1.5;"><strong>Goal:</strong> Lose weight, build muscle and strength, and improve overall fitness.</p>
             </div>
         </div>
     </section>
@@ -4321,9 +4334,28 @@
     </script>
 
     <!-- Floating CTA Button -->
-    <a href="https://calendly.com/raminpof1/30min" target="_blank" class="floating-cta" onclick="trackPhoneClick()">
+    <a href="https://calendly.com/raminpof1/30min" target="_blank" class="floating-cta" id="floatingCta" onclick="trackPhoneClick()">
         📅 Start Your Free Consultation
     </a>
+
+    <script>
+        // Show floating CTA after scrolling past the second section (About section)
+        window.addEventListener('scroll', function() {
+            const aboutSection = document.getElementById('about');
+            const floatingCta = document.getElementById('floatingCta');
+
+            if (aboutSection && floatingCta) {
+                const aboutBottom = aboutSection.offsetTop + aboutSection.offsetHeight;
+                const scrollPosition = window.pageYOffset + window.innerHeight;
+
+                if (scrollPosition > aboutBottom) {
+                    floatingCta.classList.add('visible');
+                } else {
+                    floatingCta.classList.remove('visible');
+                }
+            }
+        });
+    </script>
 
     <script src="js/main.js" defer></script>
 </body>
