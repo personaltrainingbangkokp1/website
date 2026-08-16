@@ -13,7 +13,7 @@
         SEO Improvement: Updated meta description for better keyword consistency and to highlight key benefits. 
         The phone number is a strong CTA in the SERPs. 
     -->
-    <meta name="description" content="Personal trainer Bangkok Asoke & condo training specialist for adults 40+. Expert fitness coaching in Asoke condos, Terminal 21 area. 17+ years experience. Book consultation ☎️ +66 876 905 325">
+    <meta name="description" content="Personal trainer Bangkok Asoke & condo training specialist for adults 40+. Expert fitness coaching in Asoke condos, Terminal 21 area. 18+ years experience. Book consultation ☎️ +66 876 905 325">
     
     
     <meta name="author" content="Ramin Razy">
@@ -55,7 +55,10 @@
         .hero-subtitle{font-size:var(--font-body-size);margin-bottom:2rem;opacity:0.95;color:white}
         .cta-button{display:inline-block;background:var(--accent);color:var(--text-primary);padding:18px 35px;border-radius:50px;text-decoration:none;font-weight:var(--font-weight-semibold);font-size:var(--font-body-size);transition:var(--transition);box-shadow:0 8px 20px rgba(255,217,61,0.4);text-align:center;position:relative;overflow:hidden}
         .cta-primary{background:var(--primary);color:white;font-size:1.2rem;padding:18px 40px;font-weight:800;box-shadow:0 8px 25px rgba(255,107,53,0.5)}
-        @media (max-width:768px){.trust-banner span{display:block;margin:5px 0}.business-name{font-size:14px}}
+        .floating-cta{position:fixed;bottom:20px;right:20px;z-index:1000;background:var(--primary);color:white;padding:18px 30px;border-radius:50px;text-decoration:none;font-weight:800;font-size:1.1rem;box-shadow:0 8px 30px rgba(255,107,53,0.6);transition:all 0.3s ease;animation:pulse 2s infinite}
+        .floating-cta:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(255,107,53,0.8);background:var(--primary-dark)}
+        @keyframes pulse{0%,100%{box-shadow:0 8px 30px rgba(255,107,53,0.6)}50%{box-shadow:0 8px 40px rgba(255,107,53,0.9)}}
+        @media (max-width:768px){.trust-banner span{display:block;margin:5px 0}.business-name{font-size:14px}.floating-cta{bottom:15px;right:15px;padding:15px 20px;font-size:0.95rem}}
     </style>
     
     <!-- Favicon -->
@@ -69,7 +72,7 @@
     
     <!-- Open Graph Tags (no change needed, they are already great) -->
     <meta property="og:title" content="Personal Trainer Bangkok for Adults 40+ - Ramin Razy | Strength & Mobility Specialist">
-    <meta property="og:description" content="Personal trainer Bangkok Asoke & condo training specialist for adults 40+. Expert fitness coaching in Asoke condos, Terminal 21 area. 17+ years experience."
+    <meta property="og:description" content="Personal trainer Bangkok Asoke & condo training specialist for adults 40+. Expert fitness coaching in Asoke condos, Terminal 21 area. 18+ years experience."
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://personaltrainingbangkokp1.com/">
     <meta property="og:locale" content="en_US">
@@ -83,7 +86,7 @@
     <!-- Twitter Card Tags - for better social media sharing on Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Personal Trainer Bangkok for Adults 40+ - Ramin Razy | Strength & Mobility Specialist">
-    <meta name="twitter:description" content="Personal trainer Bangkok Asoke & condo training specialist for adults 40+. Expert fitness coaching in Asoke condos, Terminal 21 area. 17+ years experience.">
+    <meta name="twitter:description" content="Personal trainer Bangkok Asoke & condo training specialist for adults 40+. Expert fitness coaching in Asoke condos, Terminal 21 area. 18+ years experience.">
     <meta name="twitter:image" content="https://personaltrainingbangkokp1.com/images/ramin-razy-personal-trainer-bangkok-og-1200x630.jpg">
     <meta name="twitter:image:alt" content="Ramin Razy - Professional Personal Trainer in Bangkok, Thailand">
 
@@ -91,17 +94,106 @@
     <meta name="keywords" content="personal trainer Bangkok, fitness coach Bangkok, weight loss Bangkok, strength training Bangkok, functional aging specialist, personal training Silom, personal training Sathorn, fitness trainer Thailand, Bangkok gym trainer, adult fitness Bangkok">
 
     
-    <!-- 
-        SEO Improvement: Structured Data - Updated with specific serviceArea properties and sameAs links. 
-        This provides more explicit, trust-building signals to search engines. 
+    <!--
+        SEO & GEO Optimization: Enhanced Entity Mapping with separate Person and Business entities
+        This helps AI engines (ChatGPT, Perplexity, Google AI Overviews) understand and cite your brand
     -->
+
+    <!-- Person Entity: Ramin Razy (The Trainer) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "Person",
+        "@id": "https://personaltrainingbangkokp1.com/#raminrazy",
+        "name": "Ramin Razy",
+        "givenName": "Ramin",
+        "familyName": "Razy",
+        "alternateName": "Ramin Razy Personal Trainer",
+        "description": "Certified personal trainer and Functional Aging Specialist with 18+ years of experience in Bangkok, Thailand. Former Royal Australian Navy serviceman with a Bachelor of Education from Swinburne University.",
+        "jobTitle": "Personal Trainer & Functional Aging Specialist",
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Personal Trainer",
+            "occupationalCategory": "Fitness and Wellness Coordinator",
+            "skills": ["Strength Training", "Functional Fitness", "Mobility Training", "Functional Aging", "Weight Loss Coaching", "Online Coaching"]
+        },
+        "knowsAbout": [
+            "Personal Training",
+            "Functional Fitness",
+            "Strength Training",
+            "Mobility Training",
+            "Functional Aging",
+            "Weight Loss",
+            "Nutrition Coaching",
+            "Yoga",
+            "Pilates",
+            "Senior Fitness",
+            "Injury Prevention"
+        ],
+        "alumniOf": [
+            {
+                "@type": "Organization",
+                "name": "Swinburne University of Technology",
+                "location": "Melbourne, Australia"
+            },
+            {
+                "@type": "Organization",
+                "name": "Royal Australian Navy"
+            }
+        ],
+        "award": "Functional Aging Specialist Certification",
+        "workLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bangkok",
+                "addressRegion": "Bangkok",
+                "addressCountry": "TH"
+            }
+        },
+        "worksFor": {
+            "@id": "https://personaltrainingbangkokp1.com/#business"
+        },
+        "founder": {
+            "@id": "https://personaltrainingbangkokp1.com/#business"
+        },
+        "url": "https://personaltrainingbangkokp1.com/",
+        "email": "raminpof1@gmail.com",
+        "telephone": "+66876905325",
+        "image": "https://personaltrainingbangkokp1.com/images/ramin-razy-personal-trainer-bangkok-og-1200x630.jpg",
+        "sameAs": [
+            "https://web.facebook.com/ramin.razy.3",
+            "https://www.linkedin.com/in/ramin-razy-4bb53a68/",
+            "https://www.instagram.com/power_of_one_bangkok/"
+        ]
+    }
+    </script>
+
+    <!-- LocalBusiness Entity: Power of One Personal Training Bangkok -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "HealthAndBeautyBusiness", "SportsActivityLocation"],
+        "@id": "https://personaltrainingbangkokp1.com/#business",
         "name": "Power of One - Personal Training Bangkok",
-        "image": "images/ramin-razy-personal-trainer-bangkok-og-1200x630.jpg",
-        "description": "Expert personal trainer in Bangkok specializing in helping adults 40+ move better, get stronger, and live pain-free. Functional Aging Specialist with 17+ years experience.",
+        "alternateName": "Power of One Bangkok",
+        "legalName": "Power of One Personal Training",
+        "brand": {
+            "@type": "Brand",
+            "name": "Power of One",
+            "alternateName": "P1 Personal Training"
+        },
+        "image": "https://personaltrainingbangkokp1.com/images/ramin-razy-personal-trainer-bangkok-og-1200x630.jpg",
+        "logo": "https://personaltrainingbangkokp1.com/images/personal-trainer-bangkok-logo-120w.png",
+        "description": "Expert personal training in Bangkok specializing in helping adults 40+ move better, get stronger, and live pain-free. Functional Aging Specialist with 18+ years experience offering in-person and online coaching.",
+        "slogan": "Empowering Adults 40+ to Move Better, Feel Stronger, Live Pain-Free",
+        "foundingDate": "2007",
+        "founder": {
+            "@id": "https://personaltrainingbangkokp1.com/#raminrazy"
+        },
+        "employee": {
+            "@id": "https://personaltrainingbangkokp1.com/#raminrazy"
+        },
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Elite Fight Club, Phrom Pong",
@@ -110,11 +202,25 @@
             "postalCode": "10110",
             "addressCountry": "TH"
         },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "13.7307",
+            "longitude": "100.5418"
+        },
         "telephone": "+66876905325",
-        "email": "ramin@personaltrainingbangkokp1.com",
+        "email": "raminpof1@gmail.com",
         "url": "https://personaltrainingbangkokp1.com/",
         "openingHours": ["Mo-Fr 06:00-21:00", "Sa-Su 08:00-18:00"],
         "priceRange": "$$",
+        "currenciesAccepted": "THB",
+        "paymentAccepted": "Cash, Bank Transfer, Credit Card",
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Bangkok",
+                "sameAs": "https://en.wikipedia.org/wiki/Bangkok"
+            }
+        ],
         "serviceArea": [
             {
                 "@type": "City",
@@ -157,24 +263,40 @@
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Personalized Strength & Mobility Training",
-                        "description": "Tailored programs for adults and older adults focusing on strength, flexibility, and functional movement"
+                        "name": "Free Movement and Strength Screening",
+                        "description": "Discover your current strength, mobility and balance so we can identify the right starting point for you",
+                        "serviceType": "Fitness Assessment"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Online & In-Person Coaching",
-                        "description": "Flexible coaching options with real-time guidance and customized programming"
+                        "name": "In-Person Personal Training",
+                        "description": "Receive safe, personalised coaching designed around your goals, abilities and experience",
+                        "serviceType": "Personal Training"
                     }
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Functional Aging & Lifestyle Support",
-                        "description": "Specialized programs for older adults focusing on mobility, balance, and healthy aging"
+                        "name": "Live Online Coaching",
+                        "description": "Train from anywhere with real-time instruction, technique correction and ongoing support",
+                        "serviceType": "Online Coaching"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Functional Aging Training",
+                        "description": "Specialized programs for adults 40+ focusing on mobility, balance, strength, and injury prevention",
+                        "serviceType": "Senior Fitness Training",
+                        "audience": {
+                            "@type": "PeopleAudience",
+                            "suggestedMinAge": "40"
+                        }
                     }
                 }
             ]
@@ -182,12 +304,16 @@
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1",
             "reviewCount": "50"
         },
         "sameAs": [
-            "https://www.facebook.com/share/16h6iU8gBL/?mibextid=wwXIfr",
-            "https://www.instagram.com/raminrazy_p1",
-            "https://www.linkedin.com/in/ramin-razy-4bb53a68"
+            "https://www.instagram.com/power_of_one_bangkok/",
+            "https://web.facebook.com/ramin.razy.3",
+            "https://www.linkedin.com/in/ramin-razy-4bb53a68/",
+            "https://www.youtube.com/@powerofone_bangkok",
+            "https://share.google/oc2fQKK8Ituvk3FKw"
         ]
     }
     </script>
@@ -1313,6 +1439,8 @@
 
         .ramin-image {
             position: relative;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .ramin-image img {
@@ -1321,19 +1449,10 @@
             box-shadow: var(--shadow-lg);
         }
 
-        .ramin-image::after {
-            display:inline-block;
-            content: '17+ Years of Excellence';
-            position: absolute;
-            bottom: var(--accent);
-            background: var(--primary);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
+        .ramin-image .video-wrapper {
+            border-radius: var(--border-radius);
+            overflow: hidden;
             box-shadow: var(--shadow-lg);
-            white-space: nowrap;
         }
 
         .ramin-bio h3 {
@@ -2815,7 +2934,7 @@
             <div class="trust-scroll">
                 <div class="scroll-content">
                     <span>🎯 Functional Aging Specialist</span>
-                    <span>💪 17+ Years Experience</span>
+                    <span>💪 18+ Years Experience</span>
                     <span>🏆 Expert Personal Trainer Bangkok</span>
                     <span>🎯 Adults 40+ Specialist</span>
                     <span>⭐ Elite Certified Trainer</span>
@@ -2832,10 +2951,11 @@
             <div class="header-contact">
                 <!-- Desktop Navigation Menu -->
                 <nav class="nav-menu">
-                    <a href="#about">About</a>
+                    <a href="#transformations">Transformations</a>
                     <a href="#services">Services</a>
-                    <a href="#videos">Videos</a>
-                    <a href="#testimonials">Stories</a>
+                    <a href="#insights">Insights</a>
+                    <a href="#over40">Over 40</a>
+                    <a href="#exercises">Exercises</a>
                     <a href="#faq">FAQ</a>
                     <a href="#contact">Contact</a>
                 </nav>
@@ -2870,10 +2990,11 @@
             
             <!-- Mobile Menu Dropdown -->
             <div class="mobile-menu" id="mobileMenu">
-                <a href="#about" onclick="closeMobileMenu()">About</a>
+                <a href="#transformations" onclick="closeMobileMenu()">Transformations</a>
                 <a href="#services" onclick="closeMobileMenu()">Services</a>
-                <a href="#videos" onclick="closeMobileMenu()">Videos</a>
-                <a href="#testimonials" onclick="closeMobileMenu()">Stories</a>
+                <a href="#insights" onclick="closeMobileMenu()">Insights</a>
+                <a href="#over40" onclick="closeMobileMenu()">Over 40</a>
+                <a href="#exercises" onclick="closeMobileMenu()">Exercises</a>
                 <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
                 <a href="#contact" onclick="closeMobileMenu()">Contact</a>
                 
@@ -2953,37 +3074,179 @@
     <section class="meet-ramin" id="about">
         <div class="section-header animate-on-scroll fade-in-up">
             <h2>Meet Your Coach, Ramin Razy</h2>
-            <p>17+ years of experience helping Bangkok adults achieve their fitness goals</p>
+            <p>18+ years of experience helping Bangkok adults achieve their fitness goals</p>
         </div>
         <div class="ramin-content">
-            <p>My name is Ramin Razy, and I've been working in the health and fitness industry in Bangkok for over 17 years.</p>
-            
-            <p>I began my journey in the Royal Australian Navy, where I learned discipline, resilience, and teamwork, before earning a Bachelor of Education from Swinburne University of Technology in Melbourne.</p>
-            
-            <p>My teaching background gives me a unique ability to explain complex concepts clearly, coach effectively, and meet people where they are in their fitness journey.</p>
-            
+            <p>My approach to coaching has been shaped by a lifetime of teaching, training and helping people perform at their best.</p>
+
+            <p>I began my professional journey in the Royal Australian Navy, where I developed the discipline, resilience and teamwork that still guide my coaching today. I later earned a Bachelor of Education from Swinburne University of Technology, giving me the skills to explain exercises clearly, adapt to different learning styles and make training approachable.</p>
+
             <div class="ramin-image">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="images/ramin-razy-personal-trainer-bangkok-372w.jpg 1x" sizes="(max-width: 768px) 250px">
-                    <source media="(min-width: 769px)" srcset="images/ramin-razy-personal-trainer-bangkok-372w.jpg 1x" sizes="300px">
-                    <img 
-                        src="images/ramin-razy-personal-trainer-bangkok-372w.jpg" 
-                        srcset="images/ramin-razy-personal-trainer-bangkok-372w.jpg 372w"
-                        sizes="(max-width: 768px) 250px, 300px"
-                        alt="Ramin Razy - Certified Personal Trainer in Bangkok, Thailand specializing in functional fitness, weight loss and strength training" 
-                        class="ramin-profile-photo" 
-                        width="300" 
-                        height="400" 
-                        loading="lazy"
-                        decoding="async">
-                </picture>
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="5Hn2Wc9Vrt8"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/5Hn2Wc9Vrt8/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play Ramin's introduction video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play Ramin's introduction video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
             </div>
-            
-            <p>Over the years, I've completed advanced training in personal training, nutrition, yoga, Pilates, and I'm a certified Functional Aging Specialist, allowing me to work safely with older adults.</p>
-            
-            <p>My mission is to help adults and older adults move better, feel stronger, and live healthier, more independent lives.</p>
-            
-            <p>I believe consistent, well-designed exercise can prevent injuries, improve mental clarity, boost confidence, and add life to your years, and I'm committed to providing safe, personalized training that delivers real results.</p>
+
+            <p>With 18 years of experience in the fitness industry, I have completed professional training in personal training, nutrition, yoga and Pilates. As a certified Functional Aging Specialist, I have a particular interest in helping adults over 40 build strength, improve mobility and maintain their independence.</p>
+
+            <p>I understand that starting—or returning to—exercise can feel intimidating, especially when dealing with pain, stiffness or previous injuries. That's why every programme begins with understanding your goals, abilities and starting point.</p>
+
+            <p>My coaching is safe, personalised and progressive. My goal is not simply to help you exercise, but to help you move with confidence, feel stronger in everyday life and continue doing the things you enjoy for years to come.</p>
+        </div>
+    </section>
+
+    <!-- Transformations Section -->
+    <section class="transformations" id="transformations" style="padding: 100px 20px; background: var(--bg-secondary);">
+        <div class="section-header animate-on-scroll fade-in-up">
+            <h2>Client Transformations</h2>
+            <p>Meet some of the people I've had the privilege to coach. Discover how personalised training has helped them build strength, improve mobility, lose weight, reduce pain and feel more confident in everyday life.</p>
+        </div>
+        <div class="transformations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            <!-- Video 1: Meet Ha -->
+            <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="Bw2jWv3OzX0"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/Bw2jWv3OzX0/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play transformation video: Meet Ha"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Ha</h3>
+            </div>
+
+            <!-- Video 2: Meet Louis -->
+            <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="qVPCoIRD1Dc"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/qVPCoIRD1Dc/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play transformation video: Meet Louis"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Louis</h3>
+            </div>
+
+            <!-- Video 3: Meet Bob & Hilda -->
+            <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="O6V0073nz_w"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/O6V0073nz_w/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play transformation video: Meet Bob & Hilda"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Bob & Hilda</h3>
+            </div>
+
+            <!-- Video 4: Meet Ian -->
+            <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="7kOyVqwDiEs"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/7kOyVqwDiEs/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play transformation video: Meet Ian"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Ian</h3>
+            </div>
+
+            <!-- Video 5: Meet Vee -->
+            <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="uI_Hw4lf3N4"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/uI_Hw4lf3N4/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play transformation video: Meet Vee"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Vee</h3>
+            </div>
+
+            <!-- Video 6: Meet Jamil -->
+            <div class="transformation-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="XNEoScgC2m8"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/XNEoScgC2m8/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play transformation video: Meet Jamil"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Meet Jamil</h3>
+            </div>
         </div>
     </section>
 
@@ -2993,26 +3256,585 @@
             <h2>My Services</h2>
             <p>Specialized training programs designed for adults and older adults who want to move better, feel stronger, and maintain their independence.</p>
         </div>
-        <div class="services-grid">
+        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Service 1: Free Movement and Strength Screening -->
             <div class="service-item animate-on-scroll fade-in-up">
-                <h3>💪 Personalized Strength & Mobility Training</h3>
-                <p>Tailored 1-on-1 programs designed to improve strength, flexibility, and functional movement.</p>
-                <p>Perfect for adults and older adults who want to move better, prevent injuries, and maintain independence in daily life.</p>
+                <div class="video-wrapper" style="margin-bottom: 20px;">
+                    <div class="youtube-facade"
+                         data-video-id="gAlZLmZXnT8"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/gAlZLmZXnT8/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play service video: Free Movement and Strength Screening"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3>Free Movement and Strength Screening</h3>
+                <p>Discover your current strength, mobility and balance so we can identify the right starting point for you.</p>
             </div>
+
+            <!-- Service 2: In-Person Personal Training -->
             <div class="service-item animate-on-scroll fade-in-up">
-                <h3>🏢 Asoke & Condo Training Specialist</h3>
-                <p>Specialized personal training in Asoke condos and apartments, including Terminal 21, Exchange Tower, and surrounding high-rise buildings.</p>
-                <p>Bringing professional equipment and expertise directly to your condo gym or private space in the heart of Bangkok's business district. Perfect for busy professionals who want convenient, high-quality fitness training.</p>
+                <div class="video-wrapper" style="margin-bottom: 20px;">
+                    <div class="youtube-facade"
+                         data-video-id="Orrca16NIfY"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/Orrca16NIfY/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play service video: In-Person Personal Training"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3>In-Person Personal Training</h3>
+                <p>Receive safe, personalised coaching designed around your goals, abilities and experience.</p>
             </div>
+
+            <!-- Service 3: Live Online Coaching -->
             <div class="service-item animate-on-scroll fade-in-up">
-                <h3>📹 Online & In-Person Coaching</h3>
-                <p>Flexible coaching options that fit your lifestyle.</p>
-                <p>Train live with me online via video or in-person, with real-time guidance, form correction, and customized programming to achieve your fitness goals safely and effectively.</p>
+                <div class="video-wrapper" style="margin-bottom: 20px;">
+                    <div class="youtube-facade"
+                         data-video-id="KOB4n_NgMY4"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/KOB4n_NgMY4/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play service video: Live Online Coaching"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3>Live Online Coaching</h3>
+                <p>Train from anywhere with real-time instruction, technique correction and ongoing support.</p>
             </div>
-            <div class="service-item animate-on-scroll fade-in-up">
-                <h3>🎯 Functional Aging & Lifestyle Support</h3>
-                <p>Specialized programs for older adults focused on maintaining mobility, balance, posture, and overall health.</p>
-                <p>I provide guidance on safe exercise, movement patterns, and healthy habits to enhance quality of life and longevity.</p>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="insights" id="insights" style="padding: 100px 20px; background: var(--bg-light);">
+        <div class="section-header animate-on-scroll fade-in-up">
+            <h2>Insights</h2>
+            <p>Practical advice on strength training, mobility, motivation and building confidence after 40. These short videos explain my safe, personalised and progressive approach to helping people move better, become stronger and achieve lasting results.</p>
+        </div>
+        <div class="insights-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto;">
+            <!-- Video 1 -->
+            <div class="insight-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="APWdovXpuQ0"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/APWdovXpuQ0/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play insight video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: 0.95rem;">You're not "too old" to train, you just need the right approach</h3>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="insight-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="WvTMQch_R3M"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/WvTMQch_R3M/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play insight video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: 0.95rem;">Real Training. Real People. Real Results 💪🏽</h3>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="insight-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="JMrFhWuOe5U"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/JMrFhWuOe5U/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play insight video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: 0.95rem;">Why I do what I do</h3>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="insight-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="q9Ze1UkA4Os"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/q9Ze1UkA4Os/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play insight video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: 0.95rem;">Train smarter after 40</h3>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="insight-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="0o40Y299kxg"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/0o40Y299kxg/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play insight video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: 0.95rem;">Nervous to Start Training?</h3>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="insight-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="gyOA4OlDuwA"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/gyOA4OlDuwA/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play insight video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: 0.95rem;">Getting Old Isn't the Problem</h3>
+            </div>
+
+            <!-- Video 7 -->
+            <div class="insight-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="ya7NgOJMfZ0"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/ya7NgOJMfZ0/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play insight video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: 0.95rem;">No Hard Workouts First</h3>
+            </div>
+
+            <!-- Video 8 -->
+            <div class="insight-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="X0bIdRk3G_w"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/X0bIdRk3G_w/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play insight video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: 0.95rem;">Motivation Comes and Goes</h3>
+            </div>
+
+            <!-- Video 9 -->
+            <div class="insight-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="41KQHmBrBJQ"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/41KQHmBrBJQ/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play insight video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: 0.95rem;">Why Strength Comes First</h3>
+            </div>
+
+            <!-- Video 10 -->
+            <div class="insight-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="QRM7DauXnFo"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/QRM7DauXnFo/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play insight video"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: 0.95rem;">Assessment First, Always</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Over 40 Section -->
+    <section class="over40" id="over40" style="padding: 100px 20px; background: var(--bg-secondary);">
+        <div class="section-header animate-on-scroll fade-in-up">
+            <h2>Training After 40</h2>
+            <p>Discover why strength, mobility, balance and bone health become increasingly important after 40. These short educational videos explain how safe, progressive training can help you reduce injury risk, move with greater confidence, maintain your independence and stay active as you age.</p>
+        </div>
+        <div class="over40-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            <!-- Video 1: Injury Prevention -->
+            <div class="over40-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="A4m5XPuz8L0"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/A4m5XPuz8L0/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play video: Injury Prevention"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Injury Prevention</h3>
+            </div>
+
+            <!-- Video 2: Balance -->
+            <div class="over40-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="neh7l97acqI"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/neh7l97acqI/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play video: Balance"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Balance</h3>
+            </div>
+
+            <!-- Video 3: Bone Health -->
+            <div class="over40-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="aK48_36MIQ8"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/aK48_36MIQ8/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play video: Bone Health"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Bone Health</h3>
+            </div>
+
+            <!-- Video 4: Mobility -->
+            <div class="over40-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="WntMXZtuSWM"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/WntMXZtuSWM/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play video: Mobility"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Mobility</h3>
+            </div>
+
+            <!-- Video 5: Why Strength Matters -->
+            <div class="over40-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="ogbZdKt5kwQ"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/ogbZdKt5kwQ/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play video: Why Strength Matters"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Why Strength Matters</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercises Section -->
+    <section class="exercises" id="exercises" style="padding: 100px 20px; background: var(--bg-light);">
+        <div class="section-header animate-on-scroll fade-in-up">
+            <h2>Exercise Tutorials</h2>
+            <p>Follow practical exercise tutorials covering warm-ups, cool-down stretches, foam rolling, core strength and functional movements. Each video focuses on safe technique, controlled movement and building strength progressively.</p>
+        </div>
+        <div class="exercises-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            <!-- Video 1: Full-Body Warm-Up -->
+            <div class="exercise-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="rADtyyAQLaE"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/rADtyyAQLaE/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play exercise video: Full-Body Warm-Up"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Full-Body Warm-Up</h3>
+            </div>
+
+            <!-- Video 2: Cool Down Stretches -->
+            <div class="exercise-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="4Ao2bKj3fwE"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/4Ao2bKj3fwE/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play exercise video: Cool Down Stretches"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Cool Down Stretches</h3>
+            </div>
+
+            <!-- Video 3: Beginner Core Program -->
+            <div class="exercise-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="GhV9BNud1JM"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/GhV9BNud1JM/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play exercise video: Beginner Core Program"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Beginner Core Program</h3>
+            </div>
+
+            <!-- Video 4: Foam Rolling Tutorial -->
+            <div class="exercise-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="3zDQin2Q7vY"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/3zDQin2Q7vY/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play exercise video: Foam Rolling Tutorial"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Foam Rolling Tutorial</h3>
+            </div>
+
+            <!-- Video 5: Single Leg Squat -->
+            <div class="exercise-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="lnhZ0yJFs6o"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/lnhZ0yJFs6o/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play exercise video: Single Leg Squat"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Single Leg Squat</h3>
+            </div>
+
+            <!-- Video 6: Pressing Movements -->
+            <div class="exercise-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="_kH_EpZow3g"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/_kH_EpZow3g/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play exercise video: Pressing Movements"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Pressing Movements</h3>
+            </div>
+
+            <!-- Video 7: Pull-Ups -->
+            <div class="exercise-card" style="background: var(--bg-primary); padding: 20px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg);">
+                <div class="video-wrapper">
+                    <div class="youtube-facade"
+                         data-video-id="S6YuXsILHhA"
+                         onclick="playYouTubeVideo(this)"
+                         style="background-image: url('https://img.youtube.com/vi/S6YuXsILHhA/maxresdefault.jpg'); background-size: cover; background-position: center;"
+                         tabindex="0"
+                         role="button"
+                         aria-label="Play exercise video: Pull-Ups"
+                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
+                         width="640"
+                         height="360">
+                        <div class="video-play-overlay"></div>
+                        <button class="play-button" type="button" aria-label="Play video">
+                            <span aria-hidden="true">▶</span>
+                        </button>
+                    </div>
+                </div>
+                <h3 style="margin-top: 15px; color: var(--text-primary); font-size: var(--font-body-size);">Pull-Ups</h3>
             </div>
         </div>
     </section>
@@ -3048,187 +3870,7 @@
             </div>
         </div>
     </section>
-    
-    <!-- Expert Insights Section (New Section for Video Embeds) -->
-    <section class="expert-insights" id="videos">
-        <div class="section-header animate-on-scroll fade-in-up">
-            <h2>From the Coach's Corner</h2>
-            <p>Get a taste of my training philosophy and methods. Here are some of my most popular videos on personalized training, functional fitness, and online coaching.</p>
-        </div>
-        <div class="expert-insights-grid">
-            <div class="video-card animate-on-scroll fade-in-up">
-                <div class="video-wrapper">
-                    <!-- YouTube Facade for Bodyweight Training -->
-                    <div class="youtube-facade" data-video-id="LLaMBiJm-KU" data-params="si=Cjn9g4KcMfBua-Op">
-                        <img src="https://img.youtube.com/vi/LLaMBiJm-KU/hqdefault.jpg" 
-                             srcset="https://img.youtube.com/vi/LLaMBiJm-KU/mqdefault.jpg 320w, 
-                                     https://img.youtube.com/vi/LLaMBiJm-KU/hqdefault.jpg 480w"
-                             sizes="(max-width: 480px) 320px, 480px"
-                             alt="Bodyweight Training for Beginners - No Gym Required by Ramin Razy" 
-                             class="youtube-thumbnail" 
-                             width="480" 
-                             height="360"
-                             loading="lazy"
-                             decoding="async"
-                             width="480" 
-                             height="360">
-                        <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play bodyweight training video">
-                            <span aria-hidden="true">▶</span>
-                        </button>
-                    </div>
-                </div>
-                <h3>Personal Training Bangkok - 4 Step Personalized Training</h3>
-                <p>4-Step Personalized Training – Every session includes a dynamic warm-up, functional strength training, targeted focus work, and a guided cool-down—tailored to your goals, fitness level, and lifestyle.</p>
-                <a href="#" class="watch-video-link" onclick="playVideo(this, 'LLaMBiJm-KU'); return false;">Watch Video ▶</a>
-            </div>
-            <div class="video-card animate-on-scroll fade-in-up">
-                <div class="video-wrapper">
-                    <!-- YouTube Facade for Training Philosophy -->
-                    <div class="youtube-facade" data-video-id="a9Vy8hl_CNo" data-params="si=Pxcg8yrv1kUygkp0">
-                        <img src="https://img.youtube.com/vi/a9Vy8hl_CNo/hqdefault.jpg" 
-                             srcset="https://img.youtube.com/vi/a9Vy8hl_CNo/mqdefault.jpg 320w, 
-                                     https://img.youtube.com/vi/a9Vy8hl_CNo/hqdefault.jpg 480w"
-                             sizes="(max-width: 480px) 320px, 480px"
-                             alt="Traditional Strength Training vs Functional Strength Training - Personal Trainer Bangkok" 
-                             class="youtube-thumbnail" 
-                             width="480" 
-                             height="360"
-                             loading="lazy"
-                             decoding="async">
-                        <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play training philosophy comparison video">
-                            <span aria-hidden="true">▶</span>
-                        </button>
-                    </div>
-                </div>
-                <h3>Traditional vs Functional Strength Training</h3>
-                <p>Discover the key differences between traditional gym training and functional fitness. Learn why functional training is more effective for real-world strength, everyday movement, and long-term health for adults 40+.</p>
-                <a href="#" class="watch-video-link" onclick="playVideo(this, 'a9Vy8hl_CNo'); return false;">Watch Video ▶</a>
-            </div>
-            <div class="video-card animate-on-scroll fade-in-up">
-                <div class="video-wrapper">
-                    <!-- YouTube Facade for Online Personal Training -->
-                    <div class="youtube-facade" data-video-id="Kzvt0rpo1mc" data-params="si=XgJAdTZV88LAoVex">
-                        <img src="https://img.youtube.com/vi/Kzvt0rpo1mc/hqdefault.jpg" 
-                             srcset="https://img.youtube.com/vi/Kzvt0rpo1mc/mqdefault.jpg 320w, 
-                                     https://img.youtube.com/vi/Kzvt0rpo1mc/hqdefault.jpg 480w"
-                             sizes="(max-width: 480px) 320px, 480px"
-                             alt="Personal Training Bangkok - Online Personal Training by Ramin Razy" 
-                             class="youtube-thumbnail" 
-                             width="480" 
-                             height="360"
-                             loading="lazy"
-                             decoding="async"
-                             width="480" 
-                             height="360">
-                        <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play online personal training video">
-                            <span aria-hidden="true">▶</span>
-                        </button>
-                    </div>
-                </div>
-                <h3>Personal Training Bangkok - Online Personal Training</h3>
-                <p>Train from anywhere with expert guidance designed to help you get stronger, healthier, and more confident. My online coaching is fully tailored to your goals, lifestyle, and fitness level, whether you're just starting out or looking to take your training further.</p>
-                <a href="#" class="watch-video-link" onclick="playVideo(this, 'Kzvt0rpo1mc'); return false;">Watch Video ▶</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Success Stories -->
-    <section class="success-stories" id="testimonials">
-        <div class="section-header animate-on-scroll fade-in-up">
-            <h2>Bangkok Client Success Stories</h2>
-            <p>Real transformations from real Bangkok residents</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial video-testimonial">
-                <div class="video-container">
-                    <!-- YouTube Facade for Client Testimonial -->
-                    <div class="youtube-facade" data-video-id="D8L76ICTu_U" data-params="si=dH2R2lwiflbZQpG4">
-                        <img src="https://img.youtube.com/vi/D8L76ICTu_U/hqdefault.jpg" 
-                             srcset="https://img.youtube.com/vi/D8L76ICTu_U/mqdefault.jpg 320w, 
-                                     https://img.youtube.com/vi/D8L76ICTu_U/hqdefault.jpg 480w"
-                             sizes="(max-width: 480px) 320px, 480px"
-                             alt="Client Success Story - Real Results with Personal Trainer Ramin Razy Bangkok" 
-                             class="youtube-thumbnail" 
-                             width="480" 
-                             height="360"
-                             loading="lazy"
-                             decoding="async"
-                             width="480" 
-                             height="360"
-                             >
-                        <div class="video-play-overlay"></div>
-                        <button class="play-button" type="button" aria-label="Play client success story video">
-                            <span aria-hidden="true">▶</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p>"Watch my transformation story and hear about my experience training with Ramin."</p>
-                <div class="testimonial-author">Client Success Story - Video Testimonial</div>
-                <a href="#" class="watch-video-link" onclick="playVideo(this, 'D8L76ICTu_U'); return false;">Watch Video ▶</a>
-            </div>
-            <div class="testimonial animate-on-scroll slide-in-right">
-                <div class="stars">★★★★★</div>
-                <div class="testimonial-content">
-                    <p class="testimonial-preview">"Ramin is the best trainer I have ever had. He is firm yet kind, highly knowledgeable, and meets me at my level. Over the past eight years we've become great friends..."</p>
-                    <p class="testimonial-full" style="display: none;">"Ramin is the best trainer I have ever had. He is firm yet kind, he is highly knowledgeable, and he meets me at my level. He keeps a great track of my progress, takes us a step back when I've been away for a few weeks and then quickly gets us back to the level I was at before my holiday. We trained in my condo gym when I lived in Bangkok, and we kept training via video when I moved to Europe. Over the past eight years we've become great friends, and our sessions together are a highlight in my week. We can talk about anything (he is a philosophy buff!) and we laugh a lot, but when I'm tired or don't feel like talking he will give me space. Highly recommended!"</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleTestimonial(this)">Read More</button>
-                <div class="testimonial-author">Rosalie van Ruler Thaker<br><span class="author-title">SVP Brookfield Private Equity, London</span></div>
-            </div>
-            <div class="testimonial animate-on-scroll slide-in-right">
-                <div class="stars">★★★★★</div>
-                <div class="testimonial-content">
-                    <p class="testimonial-preview">"Two years ago, I was suffering from chronic back pain when a friend recommended I start training with Ramin. It's truly life-changing to finally be pain-free..."</p>
-                    <p class="testimonial-full" style="display: none;">"Two years ago, I was suffering from chronic back pain when a friend recommended, I start training with Ramin to strengthen my core and improve my mobility. I decided to give it a try and I'm so glad I did. It's truly life-changing to finally be pain-free and fully functional. Even though we only train online (as I live in the Netherlands and he's based in Thailand), every session feels just as effective as in-person training. Ramin designs full-body programs that target exactly what I need, especially core strength and hip mobility. We've even converted a room in my home into a mini gym, and I couldn't be happier with his services. Each session leaves me feeling stronger, more mobile, pain-free, and genuinely happier. I highly recommend Ramin to anyone looking to improve their quality of life, no matter where in the world they are."</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleTestimonial(this)">Read More</button>
-                <div class="testimonial-author">Nicole<br><span class="author-title">Senior Lawyer, Netherlands</span></div>
-            </div>
-            <div class="testimonial animate-on-scroll slide-in-right">
-                <div class="stars">★★★★★</div>
-                <div class="testimonial-content">
-                    <p class="testimonial-preview">"I've been training with Ramin for over 7 years now, and he's helped me become the fittest and strongest I've ever been. I feel more energized throughout the day..."</p>
-                    <p class="testimonial-full" style="display: none;">"I've been training with Ramin for over 7 years now, and he's helped me become the fittest and strongest I've ever been. I feel more energized throughout the day, and for the first time in my life, I look forward to working out, something that never happened before training with him. Ramin is reliable, punctual, and always brings a positive attitude. I highly recommend him to anyone who wants to enjoy their workouts while getting real, lasting results."</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleTestimonial(this)">Read More</button>
-                <div class="testimonial-author">Omar Romero<br><span class="author-title">President of Development, Minor Development</span></div>
-            </div>
-            <div class="testimonial cta-testimonial">
-                <div class="cta-testimonial-content">
-                    <h3>Ready to Start Your Transformation?</h3>
-                    <p class="cta-subtitle">Join 200+ Bangkok professionals who transformed their fitness</p>
-                    
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <span class="checkmark">✅</span>
-                            <span>Free 30-minute fitness assessment</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="checkmark">✅</span>
-                            <span>Personalized training plan</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="checkmark">✅</span>
-                            <span>Flexible scheduling</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="checkmark">✅</span>
-                            <span>Proven results</span>
-                        </div>
-                    </div>
-                    
-                    <a href="https://calendly.com/raminpof1/30min" target="_blank" class="cta-button cta-primary">
-                        📅 Book Free Consultation
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- FAQ Section -->
     <section class="faq">
         <div class="section-header animate-on-scroll fade-in-up">
@@ -3543,7 +4185,7 @@
                 <div class="footer-column">
                     <h4>📞 Contact</h4>
                     <p><strong>Phone:</strong> <a href="tel:+66876905325" onclick="trackPhoneClick()">+66 876 905 325</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:ramin@personaltrainingbangkokp1.com">ramin@personaltrainingbangkokp1.com</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:raminpof1@gmail.com">raminpof1@gmail.com</a></p>
                     <p><strong>Hours:</strong><br>Mon-Fri: 6AM-9PM<br>Weekends: 8AM-6PM</p>
                 </div>
                 
@@ -3677,7 +4319,12 @@
             }
         }
     </script>
-    
+
+    <!-- Floating CTA Button -->
+    <a href="https://calendly.com/raminpof1/30min" target="_blank" class="floating-cta" onclick="trackPhoneClick()">
+        📅 Start Your Free Consultation
+    </a>
+
     <script src="js/main.js" defer></script>
 </body>
 </html>
