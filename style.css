@@ -3,12 +3,12 @@
 
 :root{
     /* Brand Colors */
-    --primary:#FF6B35;
-    --primary-light:#FF8A5B;
-    --primary-dark:#E55A2B;
-    --secondary:#00E5FF;
-    --secondary-light:#33EAFF;
-    --secondary-dark:#00C9E6;
+    --primary:#00C9E6;
+    --primary-light:#33D4EC;
+    --primary-dark:#00B0CC;
+    --secondary:#E55A2B;
+    --secondary-light:#F07B50;
+    --secondary-dark:#CC4A1F;
     --accent:#FFFFFF;
     --accent-hover:#F5F5F5;
     
@@ -29,12 +29,12 @@
     --shadow-md:0 4px 12px rgba(0,0,0,0.3);
     --shadow-lg:0 8px 24px rgba(0,0,0,0.4);
     --shadow-xl:0 12px 48px rgba(0,0,0,0.5);
-    --shadow-glow:0 0 20px rgba(255,107,53,0.3);
+    --shadow-glow:0 0 20px rgba(0,201,230,0.3);
     
     /* Gradients */
-    --gradient-primary:linear-gradient(135deg,#FF6B35 0%,#00E5FF 100%);
+    --gradient-primary:linear-gradient(135deg,#00C9E6 0%,#E55A2B 100%);
     --gradient-dark:linear-gradient(135deg,#121212 0%,#2A2A2A 100%);
-    --gradient-accent:linear-gradient(90deg,#FF6B35,#00E5FF);
+    --gradient-accent:linear-gradient(90deg,#00C9E6,#E55A2B);
     
     /* Layout */
     --border-radius:12px;
@@ -183,14 +183,14 @@ body {
 }
 
 .header-phone {
-    background: #FF6B35;
+    background: var(--primary);
     color: white;
     padding: 12px 24px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: var(--font-weight-semibold);
     transition: var(--transition);
-    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 201, 230, 0.3);
 }
 
 .header-phone:hover {
