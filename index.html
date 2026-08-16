@@ -833,9 +833,9 @@
         }
 
         .header-phone:hover {
-            background: #E55A2B;
+            background: #00B0CC;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 6px 16px rgba(0, 176, 204, 0.4);
         }
 
         /* Mobile phone number optimization */
@@ -3084,16 +3084,17 @@
 
             <div class="ramin-image">
                 <div class="video-wrapper">
-                    <div class="youtube-facade"
-                         data-video-id="5Hn2Wc9Vrt8"
-                         onclick="playYouTubeVideo(this)"
-                         style="background-image: url('https://img.youtube.com/vi/5Hn2Wc9Vrt8/maxresdefault.jpg'); background-size: cover; background-position: center;"
-                         tabindex="0"
-                         role="button"
-                         aria-label="Play Ramin's introduction video"
-                         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playYouTubeVideo(this);}"
-                         width="640"
-                         height="360">
+                    <div class="youtube-facade" data-video-id="5Hn2Wc9Vrt8">
+                        <img src="https://img.youtube.com/vi/5Hn2Wc9Vrt8/hqdefault.jpg"
+                             srcset="https://img.youtube.com/vi/5Hn2Wc9Vrt8/mqdefault.jpg 320w,
+                                     https://img.youtube.com/vi/5Hn2Wc9Vrt8/hqdefault.jpg 480w"
+                             sizes="(max-width: 480px) 320px, 480px"
+                             alt="Meet Ramin Razy - Your Bangkok Personal Training Coach"
+                             class="youtube-thumbnail"
+                             width="480"
+                             height="360"
+                             loading="lazy"
+                             decoding="async">
                         <div class="video-play-overlay"></div>
                         <button class="play-button" type="button" aria-label="Play Ramin's introduction video">
                             <span aria-hidden="true">▶</span>
