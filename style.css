@@ -85,9 +85,12 @@ body {
 
 /* Smaller card headers */
 .service-item h3,
-.video-card h3,
 .gmb-info h3 {
     font-size: var(--font-body-size);
+}
+
+.video-card h3 {
+    font-size: 1.5rem;
 }
 
 /* Unified Card System - Based on video-card Template */
@@ -115,9 +118,10 @@ body {
 /* Card Typography */
 .video-card h3 {
     color: var(--text-primary);
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
     font-weight: var(--font-weight-semibold);
     text-align: left;
+    text-transform: none;
 }
 
 .video-card p {
@@ -182,6 +186,35 @@ body {
 .play-button span {
     display: inline-block;
     margin-left: 5px;
+}
+
+/* Watch Video Pill - Glassmorphism Style */
+.watch-video-pill {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.youtube-facade:hover .watch-video-pill {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* GMB Card - Specific styling */
@@ -500,6 +533,7 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .cta-button:hover {
@@ -766,6 +800,7 @@ body {
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 /* Transformation goal text */
