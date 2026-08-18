@@ -85,11 +85,112 @@ body {
 
 /* Smaller card headers */
 .service-item h3,
-.feature-card h3,
 .video-card h3,
-.contact-card h3,
 .gmb-info h3 {
     font-size: var(--font-body-size);
+}
+
+/* Unified Card System - Based on video-card Template */
+.video-card {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 16px;
+    border-radius: var(--border-radius);
+    position: relative;
+    box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    border: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Card Typography */
+.video-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-weight: var(--font-weight-semibold);
+    text-align: left;
+}
+
+.video-card p {
+    color: var(--text-secondary);
+    line-height: var(--line-height-body);
+    margin-bottom: 15px;
+}
+
+/* YouTube Thumbnail - Unified styling for all cards */
+.youtube-thumbnail {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: calc(var(--border-radius) / 2);
+}
+
+/* Video Play Overlay - Unified styling */
+.video-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 201, 230, 0.2), rgba(229, 90, 43, 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.youtube-facade:hover .video-play-overlay {
+    opacity: 1;
+}
+
+/* Play Button - Unified styling */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 201, 230, 0.5);
+    z-index: 2;
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--primary-dark);
+    box-shadow: 0 6px 30px rgba(0, 201, 230, 0.7);
+}
+
+.play-button span {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* GMB Card - Specific styling */
+.gmb-card {
+    background: var(--bg-primary);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
 }
 
 .body-text, p, .paragraph {
@@ -191,6 +292,7 @@ body {
     font-weight: var(--font-weight-semibold);
     transition: var(--transition);
     box-shadow: 0 4px 12px rgba(0, 201, 230, 0.3);
+    font-size: 10px;
 }
 
 .header-phone:hover {
@@ -362,6 +464,7 @@ body {
     opacity: 0.95;
     animation: fadeInUp 0.8s ease-out 0.2s both;
     color: white;
+    text-align: center;
 }
 
 .hero-cta-container {
@@ -422,8 +525,8 @@ body {
 
 /* Section Headers */
 .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
+    text-align: left;
+    grid-column: 1 / -1;
 }
 
 .section-header h2 {
@@ -461,7 +564,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     align-items: center;
     text-align: center;
@@ -477,6 +580,7 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     width: 300px;
+    aspect-ratio: 9 / 16;
     flex-shrink: 0;
 }
 
@@ -488,7 +592,6 @@ body {
 
 .ramin-image::after {
     display: inline-block;
-    content: '17+ Years of Excellence';
     position: absolute;
     bottom: var(--accent);
     background: var(--primary);
@@ -509,10 +612,10 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 60px;
-    max-width: 800px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -609,6 +712,65 @@ body {
     opacity: 0.8;
     margin-top: 1rem;
     color: white;
+}
+
+/* Section Layouts */
+.transformations,
+.insights,
+.exercises,
+.over40 {
+    padding: 100px 20px;
+    background: var(--bg-secondary);
+}
+
+.transformations-grid,
+.insights-grid,
+.exercises-grid,
+.over40-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section header in grid */
+.transformations-grid .section-header,
+.insights-grid .section-header,
+.exercises-grid .section-header,
+.over40-grid .section-header,
+.services-grid .section-header {
+    grid-column: 1 / -1;
+}
+
+/* Transformation badges */
+.video-card h3 {
+    margin-top: 15px;
+}
+
+/* Tags/badges container */
+.video-card > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Tag/badge styling */
+.video-card span {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #00C9E6 0%, #0099B8 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Transformation goal text */
+.video-card p strong {
+    color: var(--primary);
 }
 
 /* Footer */
@@ -857,17 +1019,36 @@ footer {
     .social-icons {
         display: none;
     }
-    
+
     .nav-menu {
         display: none;
     }
-    
+
     .mobile-menu-toggle {
         display: block;
     }
-    
+
     .site-header {
         position: relative;
+    }
+
+    /* Center hero CTA on tablet and mobile */
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-cta-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-cta-container .cta-button,
+    .hero-cta-container .cta-primary {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
     }
 }
 
